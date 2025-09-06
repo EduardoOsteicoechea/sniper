@@ -1,6 +1,8 @@
 const save_button = document.getElementById("save_button");
 const pythonApi = "https://eduardoos.com/api/sniper"
 
+new VehicleCertificateGenerator("vehicle_certificate_generator_outer_container")
+
 save_button.addEventListener("click", async () => {
     var result = collectFormData();
     try {
