@@ -1,50 +1,80 @@
 class VehicleCertificateGenerator {
-
+    ElementGenerator = new HTMLElementGenerator()
     OuterContainer = null
     PlacaTop = null
+
 
     constructor(elementId) {
         this.StoreOuterContainer(elementId)
         this.StoreCurrentDate()
         this.StoreCurrentTime()
-        this.GeneratePlacaComponent(true)
-
-
+        this.components = this.ComponentsConfig.map(config => {
+            if (config.class === MultiInputField) {
+                return new config.class(false, this.OuterContainer, config.name, config.inputs, config.label);
+            } else if (config.class === SingleInputField) {
+                return new config.class(false, this.OuterContainer, config.name, config.label, config.input);
+            }
+        });
     }
 
-    CreateHTMLElement(mustLog = false, tag, id, classes = [], attributes = [], parent = null, children = [], value="") {
-        const component = document.createElement(tag)
-        if (id) {
-            component.id = id;
-        }
-        attributes.forEach(element => {
-            component.setAttribute(element[0], element[1]);
-        });
-        classes.forEach(element => {
-            component.classList.add(element);
-        });
-        if (Array.isArray(children)) {
-            children.forEach(child => {
-                component.appendChild(child);
-            });
-        } else {
-            component.innerHTML = children;
-        }
-        if (parent) {
-            parent.appendChild(component);
-        }
-        if(value){
-            component.innerHTML
-        }
-        return component
+    ComponentsConfig = [
+    {
+        name: 'nombre_de_la_empresa',
+        class: SingleInputField,
+        label: "Nombre de la empresa",
+        input: "SNIPER CERTIFICATE PRECISSION PRINTER C.A.",
+    },
+    {
+        name: 'fecha_de_emision',
+        class: MultiInputField,
+        label: "Fecha de Emisión",
+        inputs: 8
+    },
+    {
+        name: 'factura_1_n_fecha',
+        class: SingleInputField,
+        label: "Factura 1 N°/Fecha",
+        input: "Nombre de la empresa"
+    },
+    {
+        name: 'placa',
+        class: MultiInputField,
+        label: "Placa",
+        inputs: 7
+    },
+    {
+        name: 'marca',
+        class: SingleInputField,
+        label: "Marca",
+        input: "FORD"
+    },
+    {
+        name: 'modelo',
+        class: SingleInputField,
+        label: "Modelo",
+        input: "FORD"
+    },
+    {
+        name: 'ano_de_fabricacion',
+        class: MultiInputField,
+        label: "Año de frabricacion",
+        inputs: 4
+    },
+    {
+        name: 'ano_de_modelo',
+        class: MultiInputField,
+        label: "Año de Modelo",
+        inputs: 4
+    },
+];
+    
+
+    GenerateNombreDeLaEmpresaComponent(mustLog) {
+        this.PlacaTop = new NombreDeLaEmpresa(false, this.OuterContainer)
     }
 
     GeneratePlacaComponent(mustLog) {
-        this.PlacaTop = this.CreateHTMLElement(mustLog, "div", "placa_outer_container", ["sniper_list_item_composed_item_inputs"],[], this.OuterContainer)
-
-        for (let index = 0; index < 7; index++) {
-            const element = this.CreateHTMLElement(mustLog, "input", `placa_value_${index}`, ["sniper_list_item_input","sniper_list_item_composed_item_input"],[["type","text"],["value",index]], this.PlacaTop,[]);
-        }
+        this.PlacaTop = new PlacaComponent(false, this.OuterContainer)
     }
 
     StoreCurrentTime(elementId, mustLog = false) {
@@ -76,9 +106,129 @@ class VehicleCertificateGenerator {
 
     StoreOuterContainer(elementId) {
         this.OuterContainer = document.getElementById(elementId)
-
         if (!this.OuterContainer) {
             console.error(`Invalid elementId ${elementId}`)
         }
+    }
+}
+
+
+
+class VehicleRegistrationDocumentField {
+    ElementGenerator = new HTMLElementGenerator()
+    ComponentContainer;
+    ComponentLabel;
+    ComponentInputsContainer;
+    constructor(mustLog, parent, id, labelValue = "label") {
+        this.ComponentContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], parent);
+        this.ComponentLabel = this.ElementGenerator.Generate(true, new HTMLComposedTags("label"), `${id}_label`, ["sniper_list_item_label"], [], this.ComponentContainer, [], labelValue);
+        this.ComponentInputsContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_inputs_container`, ["sniper_list_item_inputs_container"], [], this.ComponentContainer);
+    }
+    HTML() {
+        return this.ComponentContainer;
+    }
+}
+
+class MultiInputField extends VehicleRegistrationDocumentField {
+    constructor(mustLog, parent, id, numberOfInputs, labelValue) {
+        super(mustLog, parent, id, labelValue);
+        this.inputs = [];
+        for (let i = 1; i <= numberOfInputs; i++) {
+            const input = this.ElementGenerator.Generate(
+                mustLog,
+                new HTMLSimpleTags("input"),
+                `${id}_input_${i}`,
+                ["sniper_list_item_input", "sniper_list_item_composed_item_input"],
+                [["type", "text"], ["value", `${i}`]],
+                this.ComponentInputsContainer
+            );
+            this.inputs.push(input);
+        }
+    }
+}
+
+class SingleInputField extends VehicleRegistrationDocumentField {
+    constructor(mustLog, parent, id, labelValue = "label", inputValue="input") {
+        super(mustLog, parent, id, labelValue);
+        this.input = this.ElementGenerator.Generate(
+            mustLog,
+            new HTMLSimpleTags("input"),
+            `${id}_input`,
+            ["sniper_list_item_input", "sniper_list_item_single_item_input"],
+            [["type", "text"], ["value", `${inputValue}`]],
+            this.ComponentInputsContainer
+        );
+    }
+}
+
+class NombreDeLaEmpresa extends SingleInputField {
+    constructor(mustLog, parent, id = "nombre_de_la_empresa", inputValue = "Nombre de la empresa", labelValue = "SNIPER CERTIFICATE PRECISSION PRINTER C.A.") {
+        super(mustLog, parent, id, inputValue, labelValue);
+    }
+}
+
+class PlacaComponent extends MultiInputField {
+    constructor(mustLog, parent, id = "placa", numberOfInputs = "7") {
+        super(mustLog, parent, id, numberOfInputs);
+    }
+}
+
+class HTMLElementGenerator {
+    element = null;
+    Generate(
+        mustLog = false,
+        htmlTag,
+        id,
+        classes = [],
+        attributes = [],
+        parent = null,
+        children = [],
+        value = ""
+    ) {
+        this.element = document.createElement(htmlTag.Tag)
+
+        if (id) {
+            this.element.id = id;
+        }
+
+        attributes.forEach(element => {
+            this.element.setAttribute(element[0], element[1]);
+        });
+
+        classes.forEach(element => {
+            this.element.classList.add(element);
+        });
+
+        if (Array.isArray(children)) {
+            children.forEach(child => {
+                this.element.appendChild(child);
+            });
+        } else {
+            this.element.innerHTML = children;
+        }
+
+        if (parent) {
+            parent.appendChild(this.element);
+        }
+
+        if (value && htmlTag instanceof HTMLComposedTags) {
+            this.element.innerHTML = value
+        }
+
+        return this.element
+    }
+}
+
+class HTMLSimpleTags {
+    Tag = null
+    constructor(tag) {
+        this.Tag = tag
+    }
+}
+
+class HTMLComposedTags {
+    Tag = null
+    constructor(tag) {
+        this.Tag = tag
     }
 }
