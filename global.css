@@ -46,9 +46,14 @@
 }
 
 input {
-    
+    padding: 2px 4px;
     background: #fff;
     color: #000;
+}
+
+button {
+    background: var(--cf);
+    color: var(--cb);
 }
 
 body{
