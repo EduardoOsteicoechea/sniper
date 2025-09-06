@@ -20,12 +20,12 @@
     width: 250px;
 }
 
-.sniper_list_item_composed_number_inputs{
+.sniper_list_item_composed_item_inputs{
     display: flex;
     align-items: center;
     gap: 2px;
 }
-.sniper_list_item_single_number_input{
+.sniper_list_item_composed_item_input{
     
-    width: 15px;
+    width: 20px;
 }
