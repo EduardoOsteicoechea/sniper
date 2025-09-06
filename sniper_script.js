@@ -1,5 +1,6 @@
  const save_button = document.getElementById("save_button");
-    const pythonApi = "http://localhost:4633/api/sniper"
+    // const pythonApi = "http://localhost:4633/api/sniper"
+    const pythonApi = "https://eduardoos.com/api/sniper"
     const dotnetApi = "http://localhost:5173/update_database"
 
     save_button.addEventListener("click", async () => {
