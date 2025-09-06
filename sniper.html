@@ -5,153 +5,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impresión Perfecta para tus certificados</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="sniper_script.js" defer></script>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="sniper.css">
 </head>
 
 <body>
     <h1>SNIPER ELITE </h1>
-    <hr>
+
     <button id="save_button">Guardar</button>
-    <hr>
-    <ol>
-        <li>
-            <label for="empresa-nombre">Nombre de la Empresa</label>
-            <input type="text" id="empresa-nombre" name="empresa-nombre">
-            <br>
+
+    <ol class="sniper_field_list">
+        <li class="sniper_list_item">
+            <label for="nombre_de_la_empresa">Nombre de la Empresa</label>
+            <input class="sniper_list_item_input" type="text" id="nombre_de_la_empresa" name="nombre_de_la_empresa"
+                value="SNIPER CERTIFICATE PRECISSION PRINTER C.A.">
         </li>
-        <li>
-            <label for="fecha-emision">Fecha Emisión</label>
-            <input type="text" id="fecha-emision" name="fecha-emision">
-            <br>
+        <li class="sniper_list_item">
+            <label>Fecha Emisión</label>
+            <div class="sniper_list_item_composed_number_inputs">    
+                <div>
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_1" name="fecha_emision_y_1" value="2">
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_2" name="fecha_emision_y_2" value="0">
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_3" name="fecha_emision_y_3" value="2">
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_4" name="fecha_emision_y_4" value="5">
+                </div>
+                <div>
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_5" name="fecha_emision_y_5" value="0">
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_6" name="fecha_emision_y_6" value="9">
+                </div>
+                <div>
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_7" name="fecha_emision_y_7" value="1">
+                    <input class="sniper_list_item_input sniper_list_item_single_number_input" type="text" id="fecha_emision_y_8" name="fecha_emision_y_8" value="2">
+                </div>
+            </div>
         </li>
-        <li>
-            <label for="factura-1-numero">Factura 1t N°/Fecha</label>
-            <input type="text" id="factura-1-numero" name="factura-1-numero">
-            <br>
+        <li class="sniper_list_item">
+            <label for="factura_1_n_fecha">Factura 1 N°/Fecha</label>
+            <input class="sniper_list_item_input" type="text" id="factura_1_n_fecha" name="factura_1_n_fecha" value="SERIE A 00000020/10-01-2025">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="placa">Placa</label>
-            <input type="text" id="placa" name="placa">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="placa" name="placa">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="marca">Marca</label>
-            <input type="text" id="marca" name="marca">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="marca" name="marca">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="modelos">Modelos</label>
-            <input type="text" id="modelos" name="modelos">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="modelos" name="modelos">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="ano-fabricacion">Año de Fabricación</label>
-            <input type="text" id="ano-fabricacion" name="ano-fabricacion">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="ano-fabricacion" name="ano-fabricacion">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="ano-modelo">Año Modelo</label>
-            <input type="text" id="ano-modelo" name="ano-modelo">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="ano-modelo" name="ano-modelo">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="serial-niv">Serial N.I.V</label>
-            <input type="text" id="serial-niv" name="serial-niv">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="serial-niv" name="serial-niv">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="serial-chassis">Serial Chassis</label>
-            <input type="text" id="serial-chassis" name="serial-chassis">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="serial-chassis" name="serial-chassis">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="serial-motor">Serial Motor</label>
-            <input type="text" id="serial-motor" name="serial-motor">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="serial-motor" name="serial-motor">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="serial-carroceria">Serial Carrocería</label>
-            <input type="text" id="serial-carroceria" name="serial-carroceria">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="serial-carroceria" name="serial-carroceria">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="clase">Clase</label>
-            <input type="text" id="clase" name="clase">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="clase" name="clase">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="tipo">Tipo</label>
-            <input type="text" id="tipo" name="tipo">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="tipo" name="tipo">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="uso">Uso</label>
-            <input type="text" id="uso" name="uso">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="uso" name="uso">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="servicio">Servicio</label>
-            <input type="text" id="servicio" name="servicio">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="servicio" name="servicio">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="color-pri">Color Pri</label>
-            <input type="text" id="color-pri" name="color-pri">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="color-pri" name="color-pri">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="color-sec">Color Sec</label>
-            <input type="text" id="color-sec" name="color-sec">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="color-sec" name="color-sec">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="numero-puestos">N° de Puestos</label>
-            <input type="text" id="numero-puestos" name="numero-puestos">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="numero-puestos" name="numero-puestos">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="numero-ejes">N° de Ejes</label>
-            <input type="text" id="numero-ejes" name="numero-ejes">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="numero-ejes" name="numero-ejes">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="peso-tara">Peso (Tara)</label>
-            <input type="text" id="peso-tara" name="peso-tara">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="peso-tara" name="peso-tara">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="cap-carga">Cáp. de Carga</label>
-            <input type="text" id="cap-carga" name="cap-carga">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="cap-carga" name="cap-carga">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="puerto-entrada">Puerto de Entrada</label>
-            <input type="text" id="puerto-entrada" name="puerto-entrada">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="puerto-entrada" name="puerto-entrada">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="planilla-liq">Planilla Liq. Gráv. N°/Fecha</label>
-            <input type="text" id="planilla-liq" name="planilla-liq">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="planilla-liq" name="planilla-liq">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="factura-adquisicion">Factura de Adquisición N°/Fecha</label>
-            <input type="text" id="factura-adquisicion" name="factura-adquisicion">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="factura-adquisicion" name="factura-adquisicion">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="refeciv-1">REFECIV</label>
-            <input type="text" id="refeciv-1" name="refeciv-1">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="refeciv-1" name="refeciv-1">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="homologacion-1">Homologación N°/Fecha</label>
-            <input type="text" id="homologacion-1" name="homologacion-1">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="homologacion-1" name="homologacion-1">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="fin-convenio-1"> Fin Convenio</label>
-            <input type="text" id="fin-convenio-1" name="fin-convenio-1">
-            <br>
+            <input class="sniper_list_item_input" type="text" id="fin-convenio-1" name="fin-convenio-1">
         </li>
     </ol>
 
@@ -160,96 +152,88 @@
     <br>
 
     <ol>
-        <li>
+        <li class="sniper_list_item">
             <label for="carrocero-nombre">Nombre de la Empresa: (Carrocero</label>
-            <input type="text" id="carrocero-nombre" name="carrocero-nombre">
+            <input class="sniper_list_item_input" type="text" id="carrocero-nombre" name="carrocero-nombre">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="factura-2-numero">Factura 2 N°/Fecha</label>
-            <input type="text" id="factura-2-numero" name="factura-2-numero">
+            <input class="sniper_list_item_input" type="text" id="factura-2-numero" name="factura-2-numero">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="emision-2"> Emisión</label>
-            <input type="text" id="emision-2" name="emision-2">
+            <input class="sniper_list_item_input" type="text" id="emision-2" name="emision-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="marca-2">Marca</label>
-            <input type="text" id="marca-2" name="marca-2">
+            <input class="sniper_list_item_input" type="text" id="marca-2" name="marca-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="ano-fabricacion-carrozado">Año Fabricación del Carrozado</label>
-            <input type="text" id="ano-fabricacion-carrozado" name="ano-fabricacion-carrozado">
+            <input class="sniper_list_item_input" type="text" id="ano-fabricacion-carrozado" name="ano-fabricacion-carrozado">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="modelo-2">Modelo</label>
-            <input type="text" id="modelo-2" name="modelo-2">
+            <input class="sniper_list_item_input" type="text" id="modelo-2" name="modelo-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="ano-modelo-carrozado">Año Modelo del Carrozado</label>
-            <input type="text" id="ano-modelo-carrozado" name="ano-modelo-carrozado">
+            <input class="sniper_list_item_input" type="text" id="ano-modelo-carrozado" name="ano-modelo-carrozado">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="clase-2">Clase</label>
-            <input type="text" id="clase-2" name="clase-2">
+            <input class="sniper_list_item_input" type="text" id="clase-2" name="clase-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="tipo-2">Tipo</label>
-            <input type="text" id="tipo-2" name="tipo-2">
+            <input class="sniper_list_item_input" type="text" id="tipo-2" name="tipo-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="uso-2">Uso</label>
-            <input type="text" id="uso-2" name="uso-2">
+            <input class="sniper_list_item_input" type="text" id="uso-2" name="uso-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="servicio-2">Servicio</label>
-            <input type="text" id="servicio-2" name="servicio-2">
+            <input class="sniper_list_item_input" type="text" id="servicio-2" name="servicio-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="color-pri-2">Color Pri.</label>
-            <input type="text" id="color-pri-2" name="color-pri-2">
+            <input class="sniper_list_item_input" type="text" id="color-pri-2" name="color-pri-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="color-sec-2">Color Sec.</label>
-            <input type="text" id="color-sec-2" name="color-sec-2">
+            <input class="sniper_list_item_input" type="text" id="color-sec-2" name="color-sec-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="serial-carrozado">Serial Carrozado</label>
-            <input type="text" id="serial-carrozado" name="serial-carrozado">
+            <input class="sniper_list_item_input" type="text" id="serial-carrozado" name="serial-carrozado">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="cap-carga-2">Cáp. de Carga</label>
-            <input type="text" id="cap-carga-2" name="cap-carga-2">
+            <input class="sniper_list_item_input" type="text" id="cap-carga-2" name="cap-carga-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="numero-puestos-2">N° de Puestos</label>
-            <input type="text" id="numero-puestos-2" name="numero-puestos-2">
+            <input class="sniper_list_item_input" type="text" id="numero-puestos-2" name="numero-puestos-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="peso-tara-2">Peso (Tara): Kg</label>
-            <input type="text" id="peso-tara-2" name="peso-tara-2">
+            <input class="sniper_list_item_input" type="text" id="peso-tara-2" name="peso-tara-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="refeciv-2">REFECIV</label>
-            <input type="text" id="refeciv-2" name="refeciv-2">
+            <input class="sniper_list_item_input" type="text" id="refeciv-2" name="refeciv-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="homologacion-2">Homologación N°/Fecha</label>
-            <input type="text" id="homologacion-2" name="homologacion-2">
+            <input class="sniper_list_item_input" type="text" id="homologacion-2" name="homologacion-2">
         </li>
-        <li>
+        <li class="sniper_list_item">
             <label for="fin-convenio-2"> Fin Convenio</label>
-            <input type="text" id="fin-convenio-2" name="fin-convenio-2">
+            <input class="sniper_list_item_input" type="text" id="fin-convenio-2" name="fin-convenio-2">
         </li>
     </ol>
 
-    <br>
-    <hr>
-    <br>
+</body>
 
-
-    <br>
-    <br>
-    <hr>
-    <br>
-
-    <script src="sniper_script.js"></script>
+</html>

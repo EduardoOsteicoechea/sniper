@@ -1,0 +1,31 @@
+.sniper_field_list{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.sniper_list_item_input{
+    
+    width: 50px;
+}
+
+.sniper_list_item{
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+.sniper_list_item > *{
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+.sniper_list_item_composed_number_inputs{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.sniper_list_item_single_number_input{
+    
+    width: 15px;
+}
