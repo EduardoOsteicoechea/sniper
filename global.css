@@ -1,46 +1,49 @@
-:root{
-	font-family:system-ui;
-	font-size:16px;
-	--cf:#000;
-	--cb:#fff;
-	--cg_1: #fafafa;
-	--cg_2: #f0f0f0;
-	--cg_3: #eee;
-	--cg_4: #ddd;
-	--cg_5: #bbb;
-	--cg_6: #ccc;
-	--cg_7: #aaa;
-	--cg_8: #888;
-	--cg_9: #444;
-	--cg_10: #222;
-	--ca_1: #d0ff00;
-	color:var(--cf);
+:root {
+    font-family: system-ui;
+    font-size: 16px;
+    --cf: #000;
+    --cb: #fff;
+    --cg_1: #fafafa;
+    --cg_2: #f0f0f0;
+    --cg_3: #eee;
+    --cg_4: #ddd;
+    --cg_5: #bbb;
+    --cg_6: #ccc;
+    --cg_7: #aaa;
+    --cg_8: #888;
+    --cg_9: #444;
+    --cg_10: #222;
+    --ca_1: #ffae00;
+    --vm_1: 20px;
+    color: var(--cf);
 
-	--b1: solid 1px #0cf1fd;
-	--b2: solid 1px #0cfd24;
-}
-@media (prefers-color-scheme: dark){
-	:root{
-		--cf:#fff;
-		--cb:#000;
-		--cg_1: #222;
-		--cg_2: #444;
-		--cg_3: #888;
-		--cg_4: #aaa;
-		--cg_5: #bbb;
-		--cg_6: #ccc;
-		--cg_7: #ddd;
-		--cg_8: #eee;
-		--cg_9: #f0f0f0;
-		--cg_10: #fafafa;
-	}
+    --b1: solid 1px #0cf1fd;
+    --b2: solid 1px #0cfd24;
 }
 
-*{
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	position:relative;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cf: #fff;
+        --cb: #000;
+        --cg_1: #222;
+        --cg_2: #444;
+        --cg_3: #888;
+        --cg_4: #aaa;
+        --cg_5: #bbb;
+        --cg_6: #ccc;
+        --cg_7: #ddd;
+        --cg_8: #eee;
+        --cg_9: #f0f0f0;
+        --cg_10: #fafafa;
+        --ca_1: #d0ff00;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
     color: var(--cf);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -58,11 +61,17 @@ button {
     color: var(--cb);
 }
 
-body{
-	margin:0 auto;
-	padding:0;
-	box-sizing:border-box;
-	max-width:1280px;
+body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1280px;
     background: var(--cb);
 
+}
+
+@media screen and (max-width:800px) {
+    :root {
+        --vm_1: 30px;
+    }
 }

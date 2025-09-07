@@ -3,7 +3,7 @@
     margin: auto;   
     display: flex; 
     flex-direction: column;
-    gap: 20px;
+    gap: var(--vm_1);
     overflow: hidden;
     padding: 10px 15px;
 }
