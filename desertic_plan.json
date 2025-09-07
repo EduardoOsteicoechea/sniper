@@ -6,53 +6,6 @@
     "author": "",
     "items": [
         {
-            "name": "Me ha hecho bien",
-            "structure": [
-                {
-                    "type":"verse",
-                    "name":"Estrofa 1",
-                    "content": [
-                        "Alzo mis ojos, veo Su obra, canto esperanza",
-                        "/ Me ha hecho bien /",
-                        "Abro mi boca, cuento Su gracia, traigo esperanza",
-                        "/ Me ha hecho bien /"
-                    ]
-                },
-                {
-                    "type":"chorus",
-                    "name":"Coro",
-                    "content": [
-                        "Vida renovada, deuda cancelada",
-                        "Gracia en mi vida",
-                        "/ atesoraré y le serviré /",
-                        "Ira cancelada, obra consumada",
-                        "Gracia en mi vida",
-                        "/ atesoraré y le serviré /"
-                    ]
-                },
-                {
-                    "type":"verse",
-                    "name":"Estrofa 2",
-                    "content": [
-                        "Rindo mi vida, busco Su gracia, vivo pureza",
-                        "/ Me ha hecho bien /",
-                        "Soy perdonado, soy renovado, con Su palabra",
-                        "/ Me ha hecho bien /"
-                    ]
-                },
-                {
-                    "type":"bridge",
-                    "name":"Puente",
-                    "content": [
-                        "Su misericordia llenará mi vida",
-                        "Gozo para una eternidad en felicidad",
-                        "Cómo olvidar Su infinita gracia",
-                        "Cristo llenará mi eternidad de felicidad"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "Sígueme",
             "structure": [
                 {
@@ -124,40 +77,77 @@
                     "type":"chorus",
                     "name":"Coro",
                     "content": [
-                        "Sígueme, sígueme, sígueme.",
-                        "Óyeme, óyeme, óyeme.",
-                        "Hablaré, con poder y diré: Soy Tu Dueño.",
-                        "Sígueme, sígueme, sígueme.",
-                        "Óyeme, óyeme, óyeme.",
-                        "Hablaré, con poder y diré: tú mi siervo."
+                        "Y tengo vida, vida Tú me das",
+                        "Y Tu palabra vida me dará.",
+                        "Tu camino me prosperará",
+                        "Y Tu palabra me sustentará."
                     ]
                 },
                 {
                     "type":"verse",
                     "name":"Estrofa 2",
                     "content": [
-                        "Desde el cielo el Creador desciende",
-                        "Humillado por salvarnos viene.",
-                        "Quebrantado por mis transgresiones",
-                        "Levantado reina las naciones."
+                        "A una vida nueva Cristo me llamó.",
+                        "A vivir la gloria me predestinó.",
+                        "Todo mi pecado en la cruz pagó.",
+                        "Su Espíritu Santo me regeneró."
                     ]
                 },
                 {
                     "type":"verse",
                     "name":"Estrofa 3",
                     "content": [
-                        "Desde el cielo el Creador desciende",
-                        "Humillado por salvarnos viene.",
-                        "Quebrantado por mis transgresiones",
-                        "Levantado reina las naciones."
+                        "Hoy tengo deleite en Tu Santa ley.",
+                        "Hoy medito alegre Tu palabra fiel.",
+                        "Tu noticia buena me prosperará.",
+                        "Bienaventurado por la eternidad."
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Me ha hecho bien",
+            "structure": [
+                {
+                    "type":"verse",
+                    "name":"Estrofa 1",
+                    "content": [
+                        "Alzo mis ojos, veo Su obra, canto esperanza",
+                        "/ Me ha hecho bien /",
+                        "Abro mi boca, cuento Su gracia, traigo esperanza",
+                        "/ Me ha hecho bien /"
+                    ]
+                },
+                {
+                    "type":"chorus",
+                    "name":"Coro",
+                    "content": [
+                        "Vida renovada, deuda cancelada",
+                        "Gracia en mi vida",
+                        "/ atesoraré y le serviré /",
+                        "Ira cancelada, obra consumada",
+                        "Gracia en mi vida",
+                        "/ atesoraré y le serviré /"
+                    ]
+                },
+                {
+                    "type":"verse",
+                    "name":"Estrofa 2",
+                    "content": [
+                        "Rindo mi vida, busco Su gracia, vivo pureza",
+                        "/ Me ha hecho bien /",
+                        "Soy perdonado, soy renovado, con Su palabra",
+                        "/ Me ha hecho bien /"
                     ]
                 },
                 {
                     "type":"bridge",
                     "name":"Puente",
                     "content": [
-                        "Tú mi siervo, tú mi siervo, sígueme, sígueme.",
-                        "Soy Tu dueño, Soy Tu dueño, sígueme, sígueme."
+                        "Su misericordia llenará mi vida",
+                        "Gozo para una eternidad en felicidad",
+                        "Cómo olvidar Su infinita gracia",
+                        "Cristo llenará mi eternidad de felicidad"
                     ]
                 }
             ]
