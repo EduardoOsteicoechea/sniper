@@ -72,6 +72,6 @@ body {
 
 @media screen and (max-width:800px) {
     :root {
-        --vm_1: 30px;
+        --vm_1: 20px;
     }
 }

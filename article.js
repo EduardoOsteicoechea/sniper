@@ -41,7 +41,7 @@ function reloadArticle(url){
         data.ideas.forEach(idea => {
             if(idea.heading)
             {
-                htmlContent += `<h2>${idea.heading}</h2>`;
+                htmlContent += `<h2 class="idea_heading">${idea.heading}</h2>`;
             }
             idea.subideas.forEach(subidea => {
               if(subidea.type === "biblical_quote")
