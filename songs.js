@@ -53,6 +53,7 @@ function reloadArticle(url) {
                     htmlContent += `<h2 class="idea_heading">${(i+1)}${item.name}</h2>`;
                 }
                 item.structure.forEach(structure_item => {
+                    console.log(structure_item)
                     htmlContent += `<div class="structure_item">`
                     for (let x = 0; x < structure_item.content.length; x++) {
                         const content_piece = structure_item.content[x];
