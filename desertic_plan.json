@@ -4,229 +4,51 @@
     "date": "7 de Septiembre del 2025",
     "series": "Perseverando en el evangelio",
     "author": "",
-    "ideas": [
+    "items": [
         {
-            "heading": "Dios anuncia que vendrá el mal",
-            "subideas": [
+            "name": "Me ha hecho bien",
+            "structure": [
                 {
-                    "content": "... te reservarás tres ciudades en medio de tu tierra que el Señor tu Dios te da en posesión. Prepararás los caminos, y dividirás en tres partes el territorio de tu tierra que el Señor tu Dios te dé en posesión, para que huya allí todo el que haya matado a alguien... cuando mate a su amigo sin querer...",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Deuteronomio.19.2-5",
-                    "key_phrases": [
-                        "para que huya allí todo el que haya matado a alguien",
-                        "cuando mate a su amigo sin querer"
+                    "type":"verse",
+                    "name":"Estrofa 1",
+                    "content": [
+                        "Alzo mis ojos, veo Su obra, canto esperanza",
+                        "/ Me ha hecho bien /",
+                        "Abro mi boca, cuento Su gracia, traigo esperanza",
+                        "/ Me ha hecho bien /"
                     ]
                 },
                 {
-                    "content": "Incluso en la tierra prometida, incluso con una obediencia robusta, el mal vendrá, por lo que debes prepararte para ello."
-                },
-                {
-                    "content": "Por tanto, te ordeno: 'Reservarás para ti tres ciudades'. Si el Señor tu Dios ensancha tu territorio, como ha jurado a tus padres, y te da toda la tierra que ha prometido dar a tus padres (si guardas cuidadosamente todos estos mandamientos que te mando hoy, de amar al Señor tu Dios y de andar siempre en sus caminos), entonces te añadirás tres ciudades más, ademas de estas tres.",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Deuteronomio.19.7-9",
-                    "key_phrases": [
-                        "si guardas cuidadosamente todos estos mandamientos que te mando hoy, de amar al Señor tu Dios y de andar siempre en sus caminos"
+                    "type":"chorus",
+                    "name":"Coro",
+                    "content": [
+                        "Vida renovada, deuda cancelada",
+                        "Gracia en mi vida",
+                        "/ atesoraré y le serviré /",
+                        "Ira cancelada, obra consumada",
+                        "Gracia en mi vida",
+                        "/ atesoraré y le serviré /"
                     ]
-                }
-            ]
-        },
-        {
-            "heading": "Dios demanda prudencia para contener el mal",
-            "subideas": [
-                {
-                    "content": "te reservarás tres ciudades... Prepararás los caminos",
-                    "biblical_reference": "Deuteronomio.19.2-3",
-                    "key_phrases": []
                 },
                 {
-                    "content": "No sea que el vengador de la sangre en el furor de su ira persiga al que lo mató, y lo alcance porque el camino es largo, y le quite la vida aunque él no merecía la muerte, porque no lo había odiado anteriormente",
-                    "biblical_reference": "Deuteronomio.19.6",
-                    "key_phrases": ["No sea que"]
+                    "type":"verse",
+                    "name":"Estrofa 1",
+                    "content": [
+                        "Rindo mi vida, busco Su gracia, vivo pureza",
+                        "/ Me ha hecho bien /",
+                        "Soy perdonado, soy renovado, con Su palabra",
+                        "/ Me ha hecho bien /"
+                    ]
                 },
                 {
-                    "content": "Por tanto te ordeno",
-                    "biblical_reference": "Deuteronomio.19.7",
-                    "key_phrases": []
-                }
-            ]
-        },
-        {
-            "heading": "Dios nos responsabiliza por contener o permitir el mal",
-            "subideas": [
-                {
-                    "content": "Así no se derramará sangre inocente en medio de tu tierra que el Señor tu Dios de da por heredad, y no seas culpable de derramar sangre.",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Deuteronomio.19.10",
-                    "key_phrases": ["y no seas culpable de derramar sangre"]
-                },
-                {"content":"Dios declara que la manera de impedir este derramamiento de sangre no era la protección de Dios, sino la prudencia del pueblo."},
-                {"content":"La desobediencia de este mandamiento, haría responsable de sangre inocente al pueblo imprudente, no únicamente al asesino."},
-                {"content":"También el limpiar limpiar la sangre del inocente, es decir, retribuir al homicida con la pena de muerte, era responsabilidad del pueblo."},
-                {"content":"La práctica de esta justicia acarrearía bendición para el pueblo."}
-            ]
-        },
-        {
-            "heading": "La prudencia es justicia de los cielos",
-            "subideas": [
-                {
-                    "content": "Porque este es el amor de Dios: que guardemos Sus mandamientos, y Sus mandamientos no son difíciles. Porque todo lo que es nacido de Dios vence al mundo. Y esta es la victoria que ha vencido al mundo: nuestra fe",
-                    "type": "biblical_quote",
-                    "biblical_reference": "1.Juan.5.3-5",
-                    "key_phrases": ["este es el amor de Dios: que guardemos Sus mandamientos"]
-                },
-                {
-                    "content": "La verdadera espiritualidad de Jesucristo es la obediencia."
-                },
-                {
-                    "content": "Podemos errar pensando que el amor a Dios son las emociones intensas que sentimos en un momento, pero el Espíritu aclara que el verdadero amor es la obediencia bíblica."
-                },
-                {
-                    "content": "Como dijo el Señor a Pedro:"
-                },
-                {
-                    "content": "'Simón, hijo de Juan, ¿me amas más que estos?'... 'Pastorea mis ovejas'... 'Simón, hijo de Juan, ¿me amas?'...'Pastorea mis ovejas'... 'Simón, hijo de Juan, ¿me quieres?'... 'Apacienta mis ovejas'",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Juan.21.15-17",
-                    "key_phrases": ["¿me amas más que estos?","Pastorea","¿me amas?","Apacienta","¿me quieres?"]
-                },
-                {
-                    "content": "El amor del discípulo se mide por la obediencia."
-                },
-                {
-                    "content": "Las palabras y emociones quedan en segundo plano."
-                },
-                {
-                    "content": "Con relación a nuestro tiempo, fuimos llamados a obedecer toda la revelación bajo el Nuevo Pacto."
-                },
-                {
-                    "content": "Fuimos llamados a Amar a Dios sobre todas las cosas, y a nuestro prójimo como a nosotros mismos."
-                },
-                {
-                    "content": "Y cumpliremos este llamamiento en la medida que obedezcamos sus mandamientos."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la provisión",
-            "subideas": [
-                {
-                    "content": "Particularmente, relacionando esto con nuestras tres ciudades, tenemos el llamamiento de vivir en prudencia para limitar nuestro sufrimiento y el nuestro prójimo."
-                },
-                {
-                    "content": "Amar verdaderamente involucra librarlo del mal a través de la prudencia."
-                },
-                {
-                    "content": "Amar al prójimo implica tomar decisiones que preservarán a los nuestros del sufrimiento que Dios anuncia que llegará."
-                },
-                {
-                    "content": "Por ejemplo, ¿Cómo decimos que amamos al prójimo si rehusamos prepararnos para suplir necesidades materiales?"
-                },
-                {
-                    "content": "... si alguien no provee para los suyos, y especialmente para los de su casa, ha negado la fe y es peor que un incrédulo",
-                    "type": "biblical_quote",
-                    "biblical_reference": "1.Timoteo.5.8",
-                    "key_phrases": []
-                },
-                {
-                    "content": "Cuando llegue el tiempo malo, necesitaremos esas tres ciudades de deuteronomio."
-                },
-                {
-                    "content": "En el aspecto económico las tres ciudades son la integridad y diligencia espiritual, el desarrollo de excelencia laboral, el ahorro, la búsqueda de mejores condiciones, y el cultivo de nuestros recursos actuales."
-                },
-                {
-                    "content": "En el aspecto económico las tres ciudades son la integridad y diligencia espiritual, el desarrollo de excelencia laboral, el ahorro, la búsqueda de mejores condiciones, y el cultivo de nuestros recursos actuales."
-                },
-                {
-                    "content": "Esta es la prudencia a la que nos debemos."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la salud",
-            "subideas": [
-                {
-                    "content": "Toma un poco de vino."
-                },
-                {
-                    "content": "Llamen a los ancianos para orar por los enfermos."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la restauración",
-            "subideas": [
-                {
-                    "content": "No ignoramos sus artimañas (2.Cor.2)."
-                },
-                {
-                    "content": "si nos mordemos unos a otros."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la sexualidad",
-            "subideas": [
-                {
-                    "content": "Huyan de la fornicación."
-                },
-                {
-                    "content": "Huyan del celibato por negligencia."
-                },
-                {
-                    "content": "Huyan de la abstinencia en el matrimonio."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la idolatría",
-            "subideas": [
-                {
-                    "content": "Huyan de la idolatría."
-                },
-                {
-                    "content": "Huyan de la avaricia."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la edificación mutua",
-            "subideas": [
-                {
-                    "content": "Cuídense unos a otros."
-                },
-                {
-                    "content": "Edifiquen al cuerpo con sus dones."
-                },
-                {
-                    "content": "Examinen el amor al ejercer."
-                },
-                {
-                    "content": "Edifiquémonos con cánticos."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia de la doctrina",
-            "subideas": [
-                {
-                    "content": "Angeles de luz."
-                },
-                {
-                    "content": "División espiritual."
-                },
-                {
-                    "content": "Diligencia en el estudio."
-                },
-                {
-                    "content": "Búsqueda de los descarriados."
-                }
-            ]
-        },
-        {
-            "heading": "La prudencia del discipulado",
-            "subideas": [
-                {
-                    "content": "Prudencia ante el día del juicio."
+                    "type":"bridge",
+                    "name":"Puente",
+                    "content": [
+                        "Su misericordia llenará mi vida",
+                        "Gozo para una eternidad en felicidad",
+                        "Cómo olvidar Su infinita gracia",
+                        "Cristo llenará mi eternidad de felicidad"
+                    ]
                 }
             ]
         }

@@ -47,37 +47,17 @@ function reloadArticle(url){
             <p class="article_heading_small_item article_author">Autor: ${data.author}</p>
         </div>
         `;
-        data.ideas.forEach(idea => {
-            if(idea.heading)
+        data.items.forEach(item => {
+            if(item.name)
             {
-                htmlContent += `<h2 class="idea_heading">${idea.heading}</h2>`;
+                htmlContent += `<h2 class="idea_heading">${item.name}</h2>`;
             }
-            idea.subideas.forEach(subidea => {
-              if(subidea.type === "biblical_quote")
-              {
-                if(subidea.key_phrases){
-                  subidea.key_phrases.forEach(key_phrase => {
-                    subidea.content = subidea.content.replace(key_phrase, `<span class="biblical_quote_key_prhase">${key_phrase}</span>`)
-                  });
-                }
-                htmlContent += `
-                <div class="biblical_quote">
-                  <p class="biblical_quote_text">${subidea.content}</p>
-                  <p class="biblical_quote_reference">${subidea.biblical_reference}</p>
-                </div>
-                `
-              }
-              else if(subidea.type === "image"){
-                htmlContent += `
-                <div class="image">
-                  <img src="static/images/${subidea.content}">
-                </div>
-                `
-              }              
-              else
-              {
-                htmlContent += `<p>${subidea.content}</p>`;
-              }
+            idea.structure.forEach(structure_item => {
+                htmlContent += `<div class="structure_item">`
+                structure_item.content.forEach(content_piece => {
+                    htmlContent += `<p class="structure_item_content_piece_item">${content_piece}</p>`;
+                })
+                htmlContent += `</div>`;
             });
         });
 
