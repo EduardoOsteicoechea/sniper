@@ -31,13 +31,16 @@
             "subideas": [
                 {
                     "content": "te reservarás tres ciudades... Prepararás los caminos",
-                    "biblical_reference": "Deuteronomio.19.2-3",
-                    "key_phrases": []
+                    "biblical_reference": "Deuteronomio.19.2-3"
                 },
                 {
                     "content": "No sea que el vengador de la sangre en el furor de su ira persiga al que lo mató, y lo alcance porque el camino es largo, y le quite la vida aunque él no merecía la muerte, porque no lo había odiado anteriormente",
                     "biblical_reference": "Deuteronomio.19.6",
                     "key_phrases": ["No sea que"]
+                },
+                {
+                    "content": "Por tanto te ordeno",
+                    "biblical_reference": "Deuteronomio.19.7"
                 }
             ]
         },
