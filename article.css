@@ -22,6 +22,15 @@
     font-size: 45px;
     line-height: 50px;
 }
+.article_heading_small_item {
+    background: var(--cg_4);
+    padding: 5px;
+}
+.article_key_idea {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 16px;
+}
 .article_series {
     font-size: 14px;
     line-height: 16px;

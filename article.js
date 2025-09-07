@@ -40,10 +40,11 @@ function reloadArticle(url){
         let htmlContent = ""; 
         htmlContent += `
         <div class="article_heading_container">
-            <h1 class="article_title">${data.title}</h1>
-            <p class="article_series">Serie: ${data.series}</p>
-            <p class="article_date">Fecha: ${data.date}</p>
-            <p class="article_author">Autor: ${data.author}</p>
+            <h1 class="article_heading_small_item article_title">${data.title}</h1>
+            <p class="article_heading_small_item article_key_idea">Serie: ${data.key_idea}</p>
+            <p class="article_heading_small_item article_series">Serie: ${data.series}</p>
+            <p class="article_heading_small_item article_date">Fecha: ${data.date}</p>
+            <p class="article_heading_small_item article_author">Autor: ${data.author}</p>
         </div>
         `;
         data.ideas.forEach(idea => {
