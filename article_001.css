@@ -1,0 +1,82 @@
+.article_001{
+    /* grid-row: 1 / -1;
+    grid-column: 4;
+    display: grid; */
+    width: 100%;
+    /* grid-template-columns: 0px fit-content 0px;
+    grid-template-rows: 10px 250px 10px auto 15px; */
+
+    
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px 15px;
+}
+
+.article_title_001{   
+    display: flex; 
+    flex-direction: column;
+    grid-row: 2;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.reload_article_button{
+    background: var(--cf);
+    color: var(--cb);
+    border:none;
+    border-radius: 4px;
+    height: 30px;
+    max-width: 70px;
+    font-weight: 300;
+    font-size: 12px !important;
+    margin-top: 10px;
+}
+
+.article_body_001{   
+    display: flex; 
+    flex-direction: column;
+    grid-row: 4;
+    max-width: 400px;
+    gap: 15px;
+}
+.article_body_001{   
+    display: flex; 
+    flex-direction: column;
+    grid-row: 4;
+    max-width: 600px;
+    gap: 15px;
+}
+
+.passage_list_001{
+    padding: 0 0 0 30px;
+}
+
+.article_body_001_biblical_passage{
+    font-style: italic;
+}
+
+
+.biblical_quote{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 10px 10px;
+  background: var(--cg_2);
+    border-radius: 4px;
+}
+.biblical_quote_text{
+  font-size: 14px;
+  font-weight: 400;
+}
+.biblical_quote_reference{
+    background: var(--cf);
+    color: var(--cb);
+    padding: 2px 5px;
+    border-radius: 2px;
+    width: fit-content;
+    font-size: 12px;
+}
+.biblical_quote_key_prhase{
+    font-weight: 600;
+    color: var(--ca_1);
+}
