@@ -106,6 +106,61 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "Salmo 1 - Resucitado",
+            "structure": [
+                {
+                    "type":"verse",
+                    "name":"Estrofa 1",
+                    "content": [
+                        "Aunque caminaba vía de maldad;",
+                        "Aunque transitaba en iniquidad;",
+                        "Aunque despreciaba Tu palabra fiel",
+                        "Vida me hablaste y resucité."
+                    ]
+                },
+                {
+                    "type":"chorus",
+                    "name":"Coro",
+                    "content": [
+                        "Sígueme, sígueme, sígueme.",
+                        "Óyeme, óyeme, óyeme.",
+                        "Hablaré, con poder y diré: Soy Tu Dueño.",
+                        "Sígueme, sígueme, sígueme.",
+                        "Óyeme, óyeme, óyeme.",
+                        "Hablaré, con poder y diré: tú mi siervo."
+                    ]
+                },
+                {
+                    "type":"verse",
+                    "name":"Estrofa 2",
+                    "content": [
+                        "Desde el cielo el Creador desciende",
+                        "Humillado por salvarnos viene.",
+                        "Quebrantado por mis transgresiones",
+                        "Levantado reina las naciones."
+                    ]
+                },
+                {
+                    "type":"verse",
+                    "name":"Estrofa 3",
+                    "content": [
+                        "Desde el cielo el Creador desciende",
+                        "Humillado por salvarnos viene.",
+                        "Quebrantado por mis transgresiones",
+                        "Levantado reina las naciones."
+                    ]
+                },
+                {
+                    "type":"bridge",
+                    "name":"Puente",
+                    "content": [
+                        "Tú mi siervo, tú mi siervo, sígueme, sígueme.",
+                        "Soy Tu dueño, Soy Tu dueño, sígueme, sígueme."
+                    ]
+                }
+            ]
         }
     ]
 }
