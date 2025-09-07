@@ -1,10 +1,5 @@
-const PageArticle001_ArticleTitle001 = document.getElementById("PageArticle001_ArticleTitle001");
-const ArticleTitle001_article_title_heading = document.getElementById("ArticleTitle001_article_title_heading");
-const PageArticle001_ArticleBody001 = document.getElementById("PageArticle001_ArticleBody001");
-const ArticleTitle001_reload_article_button = document.getElementById("ArticleTitle001_reload_article_button");
-
-const PageArticle001 = document.getElementById("PageArticle001");
-const webUrl = `static/json/${PageArticle001.dataset.contentFilename}.json`;
+const PageArticle001 = document.getElementsByTagName("article");
+const webUrl = `un_dios_prudente.json`;
 
 setTimeout(()=>{
     reloadArticle(webUrl)
