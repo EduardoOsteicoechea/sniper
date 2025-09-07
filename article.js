@@ -36,9 +36,7 @@ function reloadArticle(url){
         }
         return response.json();
     })
-    .then(data => {
-        ArticleTitle001_article_title_heading.innerHTML = data.title;
-        
+    .then(data => {        
         let htmlContent = ""; 
         data.ideas.forEach(idea => {
             if(idea.heading)
