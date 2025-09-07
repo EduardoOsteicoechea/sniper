@@ -44,7 +44,6 @@ function reloadArticle(url) {
                 <p class="article_heading_small_item article_key_idea">Síntesis: ${data.key_idea}</p>
                 <p class="article_heading_small_item article_series">Serie: ${data.series}</p>
                 <p class="article_heading_small_item article_date">Fecha: ${data.date}</p>
-                <p class="article_heading_small_item article_author">Autor: ${data.author}</p>
             </div>
             `;
             for (let i = 0; i < data.items.length; i++) {
@@ -57,8 +56,10 @@ function reloadArticle(url) {
                     htmlContent += `<div class="structure_item">`
                     for (let x = 0; x < structure_item.content.length; x++) {
                         const content_piece = structure_item.content[x];
-                        if (structure_item.type === "chorus" && x == 0) {
-                            htmlContent += `<span class="structure_item_content_piece_item_type_name">[${structure_item.name}]</span>`;
+                        if (structure_item.type === "chorus") {
+                            if (x == 0) {
+                                htmlContent += `<span class="structure_item_content_piece_item_type_name">[${structure_item.name}]</span>`;
+                            }
                             htmlContent += `<p class="structure_item_content_piece_item song_chorus">${content_piece}</p>`;
                         }else{
                             htmlContent += `<p class="structure_item_content_piece_item">${content_piece}</p>`;
