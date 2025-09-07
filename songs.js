@@ -39,17 +39,18 @@ function reloadArticle(url) {
         .then(data => {
             let htmlContent = "";
             htmlContent += `
-        <div class="article_heading_container">
-            <h1 class="article_title">${data.title}</h1>
-            <p class="article_heading_small_item article_key_idea">Síntesis: ${data.key_idea}</p>
-            <p class="article_heading_small_item article_series">Serie: ${data.series}</p>
-            <p class="article_heading_small_item article_date">Fecha: ${data.date}</p>
-            <p class="article_heading_small_item article_author">Autor: ${data.author}</p>
-        </div>
-        `;
-            data.items.forEach(item => {
+            <div class="article_heading_container">
+                <h1 class="article_title">${data.title}</h1>
+                <p class="article_heading_small_item article_key_idea">Síntesis: ${data.key_idea}</p>
+                <p class="article_heading_small_item article_series">Serie: ${data.series}</p>
+                <p class="article_heading_small_item article_date">Fecha: ${data.date}</p>
+                <p class="article_heading_small_item article_author">Autor: ${data.author}</p>
+            </div>
+            `;
+            for (let i = 0; i < data.items.length; i++) {
+                item = data.items[i]
                 if (item.name) {
-                    htmlContent += `<h2 class="idea_heading">${item.name}</h2>`;
+                    htmlContent += `<h2 class="idea_heading">${(i+1)}${item.name}</h2>`;
                 }
                 item.structure.forEach(structure_item => {
                     htmlContent += `<div class="structure_item">`
@@ -62,8 +63,7 @@ function reloadArticle(url) {
                     }
                     htmlContent += `</div>`;
                 });
-            });
-
+            }
             PageArticle001.innerHTML = htmlContent;
         })
         .catch(error => {
