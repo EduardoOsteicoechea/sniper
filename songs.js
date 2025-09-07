@@ -50,7 +50,7 @@ function reloadArticle(url) {
             for (let i = 0; i < data.items.length; i++) {
                 item = data.items[i]
                 if (item.name) {
-                    htmlContent += `<h2 class="idea_heading">${(i+1)}${item.name}</h2>`;
+                    htmlContent += `<h2 class="idea_heading">${(i+1)}. ${item.name}</h2>`;
                 }
                 item.structure.forEach(structure_item => {
                     console.log(structure_item)
