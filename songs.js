@@ -54,6 +54,9 @@ function reloadArticle(url){
             }
             item.structure.forEach(structure_item => {
                 htmlContent += `<div class="structure_item">`
+                if(structure_item.type ==="chorus"){
+                    htmlContent += `<p class="structure_item_content_piece_item_type_name">[${structure_item.Name}]</p>`;
+                }
                 structure_item.content.forEach(content_piece => {
                     htmlContent += `<p class="structure_item_content_piece_item">${content_piece}</p>`;
                 })
