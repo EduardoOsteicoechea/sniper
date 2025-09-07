@@ -16,17 +16,22 @@
     padding: 10px 10px 10px 10px;
     background: var(--cg_2);
     border-radius: 4px;
+    margin-top: 5px;
 }
 .article_title {
-    font-size: 35px;
-    line-height: 35px;
+    font-size: 45px;
+    line-height: 50px;
 }
 .article_series {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
 }
 .article_date {
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 16px;
+}
+.article_author {
+    font-size: 14px;
     line-height: 16px;
 }
 

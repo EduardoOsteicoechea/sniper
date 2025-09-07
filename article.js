@@ -42,7 +42,8 @@ function reloadArticle(url){
         <div class="article_heading_container">
             <h1 class="article_title">${data.title}</h1>
             <p class="article_series">Serie: ${data.series}</p>
-            <p class="article_date">${data.date}</p>
+            <p class="article_date">Fecha: ${data.date}</p>
+            <p class="article_author">Autor: ${data.author}</p>
         </div>
         `;
         data.ideas.forEach(idea => {
