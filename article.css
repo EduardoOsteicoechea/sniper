@@ -21,11 +21,11 @@
 .article_title {
     font-size: 45px;
     line-height: 50px;
-    border-radius: 3px;
 }
 .article_heading_small_item {
     background: var(--cg_4);
     padding: 5px;
+    border-radius: 3px;
 }
 .article_key_idea {
     font-style: italic;

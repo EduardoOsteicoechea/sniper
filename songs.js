@@ -41,9 +41,9 @@ function reloadArticle(url) {
             htmlContent += `
             <div class="article_heading_container">
                 <h1 class="article_title">${data.title}</h1>
-                <p class="article_heading_small_item article_key_idea">Síntesis: ${data.key_idea}</p>
+                <p class="article_heading_small_item article_key_idea">${data.key_idea}</p>
                 <p class="article_heading_small_item article_series">Serie: ${data.series}</p>
-                <p class="article_heading_small_item article_date">Fecha: ${data.date}</p>
+                <p class="article_heading_small_item article_date">${data.date}</p>
             </div>
             `;
             for (let i = 0; i < data.items.length; i++) {
