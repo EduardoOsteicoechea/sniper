@@ -28,13 +28,6 @@ document.addEventListener('pointerdown', (event) => {
   }
 });
 
-ArticleTitle001_reload_article_button.addEventListener('click',()=>{
-    PageArticle001_ArticleBody001.innerHTML = "Reloading"
-    setTimeout(()=>{
-        reloadArticle(webUrl)
-    },100)
-})
-
 function reloadArticle(url){
     fetch(url)
     .then(response => {
