@@ -76,10 +76,10 @@ function reloadArticle(url){
               }
             });
         });
-        PageArticle001_ArticleBody001.innerHTML = htmlContent;
+        PageArticle001.innerHTML = htmlContent;
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
-        PageArticle001_ArticleBody001.innerHTML = `<p>Error loading content.</p>`; 
+        PageArticle001.innerHTML = `<p>Error loading content.</p>`; 
     });
 }
