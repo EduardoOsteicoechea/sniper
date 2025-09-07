@@ -9,7 +9,7 @@
     line-height: 20px;
 }
 
-.article_title_001{   
+.article_title{   
     display: flex; 
     flex-direction: column;
     grid-row: 2;

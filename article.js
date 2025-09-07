@@ -38,6 +38,13 @@ function reloadArticle(url){
     })
     .then(data => {        
         let htmlContent = ""; 
+        htmlContent += `
+        <div class="article_heading_container">
+            <h1 class="article_title">${data.title}</h1>
+            <p class="article_series">${data.series}</p>
+            <p class="article_date">${data.date}</p>
+        </div>
+        `;
         data.ideas.forEach(idea => {
             if(idea.heading)
             {
