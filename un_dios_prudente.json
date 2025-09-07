@@ -5,15 +5,23 @@
             "heading": "Dios anuncia que vendrá el mal",
             "subideas": [
                 {
-                    "content": "¿Por qué si Dios está en control de la realidad, permite que ocurra el mal?"
-                },
-                {
                     "content": "... te reservarás tres ciudades en medio de tu tierra que el Señor tu Dios te da en posesión. Prepararás los caminos, y dividirás en tres partes el territorio de tu tierra que el Señor tu Dios te dé en posesión, para que huya allí todo el que haya matado a alguien... cuando mate a su amigo sin querer, sin haberlo odiado anteriormente (como cuando un hombre va al bosque con su amigo a cortar leña, y su mano blande el hacha para cortar el árbol, y el hierro salta del mango y golpea a su amigo, y éste muere), él puede huir a estas ciudades y vivir",
                     "type": "biblical_quote",
-                    "biblical_reference": "Deuteronomio.19.3",
+                    "biblical_reference": "Deuteronomio.19.2-5",
                     "key_phrases": [
                         "para que huya allí todo el que haya matado a alguien",
                         "cuando mate a su amigo sin querer"
+                    ]
+                },
+                {
+                    "content": "Incluso en la tierra prometida, incluso en caso de una obediencia robusta, el mal vendrá, por lo que debes prepararte para ello."
+                },
+                {
+                    "content": "Por tanto, te ordeno: 'Reservarás para ti tres ciudades'. Si el Señor tu Dios ensancha tu territorio, como ha jurado a tus padres, y te da toda la tierra que ha prometido dar a tus padres (si guardas cuidadosamente todos estos mandamientos que te mando hoy, de amar al Señor tu Dios y de andar siempre en sus caminos), entonces te añadirás tres ciudades más, ademas de estas tres.",
+                    "type": "biblical_quote",
+                    "biblical_reference": "Deuteronomio.19.7-9",
+                    "key_phrases": [
+                        "si guardas cuidadosamente todos estos mandamientos que te mando hoy, de amar al Señor tu Dios y de andar siempre en sus caminos"
                     ]
                 }
             ]
@@ -21,9 +29,6 @@
         {
             "heading": "Dios demanda prudencia para contener el mal",
             "subideas": [
-                {
-                    "content": "¿Por qué si Dios está en control de la realidad, permite que ocurra el mal?"
-                },
                 {
                     "content": "Más engañoso que todo es el corazón, Y sin remedio; ¿Quién lo comprenderá?",
                     "type": "biblical_quote",
@@ -41,9 +46,6 @@
             "heading": "Dios nos responsabiliza por contener o permitir el mal",
             "subideas": [
                 {
-                    "content": "¿Por qué si Dios está en control de la realidad, permite que ocurra el mal?"
-                },
-                {
                     "content": "Más engañoso que todo es el corazón, Y sin remedio; ¿Quién lo comprenderá?",
                     "type": "biblical_quote",
                     "biblical_reference": "Jeremías.17.9",
@@ -59,31 +61,6 @@
         {
             "heading": "La prudencia ante el mal es justicia del reino de los cielos",
             "subideas": [
-                {
-                    "content": "¿Por qué si Dios está en control de la realidad, permite que ocurra el mal?"
-                },
-                {
-                    "content": "Más engañoso que todo es el corazón, Y sin remedio; ¿Quién lo comprenderá?",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Jeremías.17.9",
-                    "key_phrases": [
-                        "engañoso",
-                        "el corazón",
-                        "sin remedio",
-                        "¿Quién lo comprenderá?"
-                    ]
-                }
-            ]
-        },
-        {
-            "heading": "Mil maneras de dañar lo bueno",
-            "subideas": [
-                {
-                    "content": "Y es que éste es el problema con nosotros, los pecadores."
-                },
-                {
-                    "content": "La Palabra de Dios dice:"
-                },
                 {
                     "content": "Más engañoso que todo es el corazón, Y sin remedio; ¿Quién lo comprenderá?",
                     "type": "biblical_quote",
