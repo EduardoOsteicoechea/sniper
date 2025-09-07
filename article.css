@@ -1,14 +1,8 @@
 .page_article{
-    /* grid-row: 1 / -1;
-    grid-column: 4;
-    display: grid; */
-    width: 100%;
-    /* grid-template-columns: 0px fit-content 0px;
-    grid-template-rows: 10px 250px 10px auto 15px; */
-
-    
+    max-width: 500px;    
     display: flex; 
     flex-direction: column;
+    gap: 10px;
     overflow: hidden;
     padding: 10px 15px;
 }
