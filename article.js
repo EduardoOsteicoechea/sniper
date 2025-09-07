@@ -1,4 +1,4 @@
-const PageArticle001 = document.getElementsByTagName("article");
+const PageArticle001 = document.getElementsByTagName("article")[0];
 const webUrl = `un_dios_prudente.json`;
 
 setTimeout(()=>{
@@ -74,6 +74,7 @@ function reloadArticle(url){
               }
             });
         });
+
         PageArticle001.innerHTML = htmlContent;
     })
     .catch(error => {
