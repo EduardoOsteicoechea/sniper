@@ -102,7 +102,12 @@
                 },
                 {
                     "content": "Y cumpliremos este llamamiento en la medida que obedezcamos sus mandamientos."
-                },
+                }
+            ]
+        },
+        {
+            "heading": "La prudencia de la provisión",
+            "subideas": [
                 {
                     "content": "Particularmente, relacionando esto con nuestras tres ciudades, tenemos el llamamiento de vivir en prudencia para limitar nuestro sufrimiento y el nuestro prójimo."
                 },
@@ -132,66 +137,73 @@
                 },
                 {
                     "content": "Esta es la prudencia a la que nos debemos."
+                }
+            ]
+        },
+        {
+            "heading": "La prudencia de la salud",
+            "subideas": [
+                {
+                    "content": "Toma un poco de vino."
                 },
                 {
-                    "content": "¿Cómo decimos que amamos si rehusamos congregarnos para sostener la fe de los hermanos."
+                    "content": "Llamen a los ancianos para orar por los enfermos."
+                }
+            ]
+        },
+        {
+            "heading": "La prudencia de la restauración",
+            "subideas": [
+                {
+                    "content": "No ignoramos sus artimañas (2.Cor.2)."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Hebreos.10.23-24",
-                    "key_phrases": []
+                    "content": "si nos mordemos unos a otros."
+                }
+            ]
+        },
+        {
+            "heading": "La prudencia de la sexualidad",
+            "subideas": [
+                {
+                    "content": "Huyan de la fornicación."
                 },
                 {
-                    "content": "¿Cómo decimos que amamos si rehusamos congregarnos para sostener la fe de los hermanos."
+                    "content": "Huyan del celibato por negligencia."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Hebreos.10.23-24",
-                    "key_phrases": []
+                    "content": "Huyan de la abstinencia en el matrimonio."
+                }
+            ]
+        },
+        {
+            "heading": "La prudencia de la edificación",
+            "subideas": [
+                {
+                    "content": "Cuídense unos a otros."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Mateo.7.24",
-                    "key_phrases": []
+                    "content": "Edifiquen al cuerpo con sus dones."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Mateo.10.16",
-                    "key_phrases": []
+                    "content": "Examinen el amor al ejercer."
+                }
+            ]
+        },
+        {
+            "heading": "La prudencia de la doctrina",
+            "subideas": [
+                {
+                    "content": "Angeles de luz."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Lucas.1.17",
-                    "key_phrases": []
+                    "content": "División espiritual."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "1.Timoteo.3.2",
-                    "key_phrases": []
+                    "content": "Diligencia en el estudio."
                 },
                 {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Tito.2.2",
-                    "key_phrases": []
-                },
-                {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Tito.2.5",
-                    "key_phrases": []
-                },
-                {
-                    "content": "",
-                    "type": "biblical_quote",
-                    "biblical_reference": "Tito.2.6",
-                    "key_phrases": []
+                    "content": "Búsqueda de los descarriados."
                 }
             ]
         }
