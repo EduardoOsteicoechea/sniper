@@ -32,7 +32,7 @@
                 },
                 {
                     "type":"verse",
-                    "name":"Estrofa 1",
+                    "name":"Estrofa 2",
                     "content": [
                         "Rindo mi vida, busco Su gracia, vivo pureza",
                         "/ Me ha hecho bien /",
@@ -48,6 +48,61 @@
                         "Gozo para una eternidad en felicidad",
                         "Cómo olvidar Su infinita gracia",
                         "Cristo llenará mi eternidad de felicidad"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Me ha hecho bien",
+            "structure": [
+                {
+                    "type":"verse",
+                    "name":"Estrofa 1",
+                    "content": [
+                        "Desde el cielo una voz se oye",
+                        "Soberano el creador responde.",
+                        "Las naciones siguen de espaldas",
+                        "en Su Trono el Creador declara:"
+                    ]
+                },
+                {
+                    "type":"chorus",
+                    "name":"Coro",
+                    "content": [
+                        "Sígueme, sígueme, sígueme.",
+                        "Óyeme, óyeme, óyeme.",
+                        "Hablaré, con poder y diré: Soy Tu Dueño.",
+                        "Sígueme, sígueme, sígueme.",
+                        "Óyeme, óyeme, óyeme.",
+                        "Hablaré, con poder y diré: tú mi siervo."
+                    ]
+                },
+                {
+                    "type":"verse",
+                    "name":"Estrofa 2",
+                    "content": [
+                        "Desde el cielo el Creador desciende",
+                        "Humillado por salvarnos viene.",
+                        "Quebrantado por mis transgresiones",
+                        "Levantado reina las naciones."
+                    ]
+                },
+                {
+                    "type":"verse",
+                    "name":"Estrofa 3",
+                    "content": [
+                        "Desde el cielo el Creador desciende",
+                        "Humillado por salvarnos viene.",
+                        "Quebrantado por mis transgresiones",
+                        "Levantado reina las naciones."
+                    ]
+                },
+                {
+                    "type":"bridge",
+                    "name":"Puente",
+                    "content": [
+                        "Tú mi siervo, tú mi siervo, sígueme, sígueme.",
+                        "Soy Tu dueño, Soy Tu dueño, sígueme, sígueme."
                     ]
                 }
             ]
