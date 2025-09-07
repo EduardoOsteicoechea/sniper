@@ -52,7 +52,7 @@ function reloadArticle(url){
             {
                 htmlContent += `<h2 class="idea_heading">${item.name}</h2>`;
             }
-            idea.structure.forEach(structure_item => {
+            item.structure.forEach(structure_item => {
                 htmlContent += `<div class="structure_item">`
                 structure_item.content.forEach(content_piece => {
                     htmlContent += `<p class="structure_item_content_piece_item">${content_piece}</p>`;
