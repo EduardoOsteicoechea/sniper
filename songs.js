@@ -57,7 +57,7 @@ function reloadArticle(url) {
                     for (let x = 0; x < structure_item.content.length; x++) {
                         const content_piece = structure_item.content[x];
                         if (structure_item.type === "chorus" && x == 0) {
-                            htmlContent += `<p class="structure_item_content_piece_item_type_name">[${structure_item.Name}]</p>`;
+                            htmlContent += `<p class="structure_item_content_piece_item_type_name">[${structure_item.name}]</p>`;
                         }
                         htmlContent += `<p class="structure_item_content_piece_item">${content_piece}</p>`;
                     }
