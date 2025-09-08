@@ -2,14 +2,14 @@ export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
     OuterContainer = null
     PlacaTop = null
-    printedFileName = "sample_name.pdf"
+    printableOverlayFileName = "sample_name.pdf"
     generatePdfButton = null
     websiteUrl = ""
     mainApiEndpoint = ""
     mainDataFileUrl = ""
 
     constructor(
-        element, 
+        element,
         websiteUrl
     ) {
         this.websiteUrl = websiteUrl
@@ -119,9 +119,10 @@ export default class VehicleCertificateGenerator {
     }
 
     StoreOuterContainer(element) {
-        this.OuterContainer = element
-        if (!this.OuterContainer) {
+        if (!element) {
             console.error(`Invalid element ${element}`)
+        } else {
+            this.OuterContainer = element
         }
     }
 
@@ -176,7 +177,7 @@ export default class VehicleCertificateGenerator {
                 const a = document.createElement('a');
                 a.style.display = 'none';
                 a.href = url;
-                a.download = vehicleCertificateGenerator.printedFileName;
+                a.download = this.printableOverlayFileName;
                 document.body.appendChild(a);
                 a.click();
                 window.URL.revokeObjectURL(url);
