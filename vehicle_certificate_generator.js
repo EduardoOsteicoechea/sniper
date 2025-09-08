@@ -1,95 +1,74 @@
 export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
-    OuterContainer = null
-    PlacaTop = null
-    printableOverlayFileName = "sample_name.pdf"
-    generatePdfButton = null
+    
+    outerContainer = null
     websiteUrl = ""
     mainApiEndpoint = ""
     mainDataFileUrl = ""
 
+    PlacaTop = null
+    printableOverlayFileName = "sample_name.pdf"
+    generatePdfButton = null
+
     constructor(
-        element,
-        websiteUrl
+        outerContainer, 
+        websiteUrl,
+        mainApiEndpoint,
+        mainDataFileUrl
     ) {
+        this.outerContainer = outerContainer
         this.websiteUrl = websiteUrl
-        this.StoreOuterContainer(element)
-        this.StorePageDatasetElement()
-        this.SetMainApiEndpoint()
-        this.TestMainApiEndpoint()
-        this.SetMainDatafileUrl()
-        this.GenerateGeneratePdfButton(element)
+        this.mainApiEndpoint = mainApiEndpoint
+        this.mainDataFileUrl = mainDataFileUrl
+
+        this.GenerateGeneratePdfButton()
         this.StoreCurrentDate()
         this.StoreCurrentTime()
-        this.components = this.ComponentsConfig.map(config => {
-            if (config.class === MultiInputField) {
-                return new config.class(false, this.OuterContainer, config.name, config.inputs, config.label);
-            } else if (config.class === SingleInputField) {
-                return new config.class(false, this.OuterContainer, config.name, config.label, config.input);
-            }
-        });
+
+        this.components = this.ComponentsConfig.map(config => new SingleInputField(
+            false,
+            this.outerContainer,
+            config.name,
+            config.label,
+            config.input,
+            config.validationClass
+        ));
+        
         console.log(this)
     }
 
     ComponentsConfig = [
         {
             name: 'nombre_de_la_empresa',
-            class: SingleInputField,
             label: "Nombre de la empresa",
             input: "SNIPER CERTIFICATE PRECISSION PRINTER C.A.",
+            validationClass: new AlfanumericValidation(50, "Nombre de la empresa")
         },
         {
             name: 'fecha_de_emision',
-            class: MultiInputField,
             label: "Fecha de Emisión",
-            inputs: 8
+            input: "2025",
+            validationClass: new NumericValidation(8, "Fecha de Emisión")
         },
         {
-            name: 'factura_1_n_fecha',
-            class: SingleInputField,
-            label: "Factura 1 N°/Fecha",
-            input: "Nombre de la empresa"
+            name: 'serie_de_numero_de_factura_1',
+            label: "Serie de Número de Factura 1",
+            input: "SERIE A",
+            validationClass: new AlphabeticValidation(7, "Serie de Número de Factura")
         },
         {
-            name: 'placa',
-            class: MultiInputField,
-            label: "Placa",
-            inputs: 7
+            name: 'numero_de_factura_1',
+            label: "Número de Factura 1",
+            input: "00000020",
+            validationClass: new NumericValidation(8, "Número de Factura 1")
         },
         {
-            name: 'marca',
-            class: SingleInputField,
-            label: "Marca",
-            input: "FORD"
-        },
-        {
-            name: 'modelo',
-            class: SingleInputField,
-            label: "Modelo",
-            input: "FORD"
-        },
-        {
-            name: 'ano_de_fabricacion',
-            class: MultiInputField,
-            label: "Año de frabricacion",
-            inputs: 4
-        },
-        {
-            name: 'ano_de_modelo',
-            class: MultiInputField,
-            label: "Año de Modelo",
-            inputs: 4
-        },
+            name: 'fecha_de_factura_1',
+            label: "Fecha Factura 1",
+            input: "2025",
+            validationClass: new NumericValidation(8, "Fecha Factura 1")
+        }
     ];
-
-
-    GenerateNombreDeLaEmpresaComponent(mustLog) {
-        this.PlacaTop = new NombreDeLaEmpresa(false, this.OuterContainer)
-    }
-
-    GeneratePlacaComponent(mustLog) {
-        this.PlacaTop = new PlacaComponent(false, this.OuterContainer)
-    }
 
     StoreCurrentTime(elementId, mustLog = false) {
         const now = new Date();
@@ -118,20 +97,16 @@ export default class VehicleCertificateGenerator {
         if (mustLog) console.log(this.time);
     }
 
-    StoreOuterContainer(element) {
-        if (!element) {
-            console.error(`Invalid element ${element}`)
-        } else {
-            this.OuterContainer = element
-        }
-    }
-
     StorePageDatasetElement() {
         this.pageDatasetElement = document.getElementById("page_dataset_attributes")
     }
 
     SetMainApiEndpoint() {
         this.mainApiEndpoint = this.websiteUrl + this.pageDatasetElement.dataset.mainApiEndpoint;
+    }
+
+    SetMainDatafileUrl() {
+        this.mainDataFileUrl = this.websiteUrl + this.pageDatasetElement.dataset.mainDataFileUrl;
     }
 
     TestMainApiEndpoint() {
@@ -150,12 +125,8 @@ export default class VehicleCertificateGenerator {
             });
     }
 
-    SetMainDatafileUrl() {
-        this.mainDataFileUrl = this.websiteUrl + this.pageDatasetElement.dataset.mainDataFileUrl;
-    }
-
     GenerateGeneratePdfButton() {
-        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type", "button"]], this.OuterContainer, [], "Generar");
+        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type", "button"]], this.outerContainer, [], "Generar");
 
         this.generatePdfButton.addEventListener("click", async () => {
             var result = collectFormData();
@@ -187,8 +158,6 @@ export default class VehicleCertificateGenerator {
             }
         })
 
-
-
         function collectFormData() {
             const inputs = document.querySelectorAll('input[name]');
             const formData = {};
@@ -199,7 +168,6 @@ export default class VehicleCertificateGenerator {
         }
     }
 }
-
 
 
 class VehicleRegistrationDocumentField {
@@ -217,26 +185,15 @@ class VehicleRegistrationDocumentField {
     }
 }
 
-class MultiInputField extends VehicleRegistrationDocumentField {
-    constructor(mustLog, parent, id, numberOfInputs, labelValue) {
-        super(mustLog, parent, id, labelValue);
-        this.inputs = [];
-        for (let i = 1; i <= numberOfInputs; i++) {
-            const input = this.ElementGenerator.Generate(
-                mustLog,
-                new HTMLSimpleTags("input"),
-                `${id}_input_${i}`,
-                ["sniper_list_item_input", "sniper_list_item_composed_item_input"],
-                [["type", "text"], ["value", `${i}`]],
-                this.ComponentInputsContainer
-            );
-            this.inputs.push(input);
-        }
-    }
-}
-
 class SingleInputField extends VehicleRegistrationDocumentField {
-    constructor(mustLog, parent, id, labelValue = "label", inputValue = "input") {
+    constructor(
+        mustLog,
+        parent,
+        id,
+        labelValue = "label",
+        inputValue = "input",
+        validationClass = null
+    ) {
         super(mustLog, parent, id, labelValue);
         this.input = this.ElementGenerator.Generate(
             mustLog,
@@ -246,18 +203,10 @@ class SingleInputField extends VehicleRegistrationDocumentField {
             [["type", "text"], ["value", `${inputValue}`]],
             this.ComponentInputsContainer
         );
-    }
-}
 
-class NombreDeLaEmpresa extends SingleInputField {
-    constructor(mustLog, parent, id = "nombre_de_la_empresa", inputValue = "Nombre de la empresa", labelValue = "SNIPER CERTIFICATE PRECISSION PRINTER C.A.") {
-        super(mustLog, parent, id, inputValue, labelValue);
-    }
-}
-
-class PlacaComponent extends MultiInputField {
-    constructor(mustLog, parent, id = "placa", numberOfInputs = "7") {
-        super(mustLog, parent, id, numberOfInputs);
+        if (validationClass) {
+            validationClass.validation(this.input)
+        }
     }
 }
 
@@ -318,5 +267,105 @@ class HTMLComposedTags {
     Tag = null
     constructor(tag) {
         this.Tag = tag
+    }
+}
+
+class InputValidationBase {
+    numberOfCharacters = 0;
+    forbiddenCharacters = [""];
+    allowedCharacters = [""];
+    inputName = "Input Name";
+
+    constructor(
+        numberOfCharacters = 10,
+        inputName
+    ) {
+        this.numberOfCharacters = numberOfCharacters
+        this.inputName = inputName
+    }
+
+    displayError(message) {
+        alert(message);
+    }
+
+    validation(input) {
+        const inputValue = input.value;
+        if(inputValue.length > this.numberOfCharacters){
+            this.displayError(`"${this.numberOfCharacters}" es el máximo de caracteres para ${this.inputName}.`)
+        }
+        this.validationAction(input)
+    }
+}
+
+class AlfanumericValidation extends InputValidationBase {
+
+    constructor(
+        numberOfCharacters = 10,
+        inputName
+    ) {
+        super(numberOfCharacters, inputName)
+
+        this.validationAction = () => {
+            input.addEventListener("input", () => {
+                const inputValue = input.value
+                inputValue.forEach(character => {
+                    if (this.forbiddenCharacters.includes(character)) {
+                        displayError(`${character} es inválido para ${this.inputName}`)
+                        const replacementValue = inputValue.replace(character, "")
+                        input.value = replacementValue;
+                    }
+                });
+            })
+        }
+    }
+}
+
+class NumericValidation extends InputValidationBase {
+    numberOfCharacters = 0;
+    allowedCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+    constructor(
+        numberOfCharacters = 10,
+        inputName
+    ) {
+        super(numberOfCharacters, inputName)
+
+        this.validationAction = () => {
+            input.addEventListener("input", () => {
+                const inputValue = input.value
+                inputValue.forEach(character => {
+                    if (this.forbiddenCharacters.includes(character)) {
+                        displayError(`${character} es inválido para ${this.inputName}. Sólo números son admitidos en este campo.`)
+                        const replacementValue = inputValue.replace(character, "")
+                        input.value = replacementValue;
+                    }
+                });
+            })
+        }
+    }
+}
+
+class AlphabeticValidation extends InputValidationBase {
+    numberOfCharacters = 0;
+    allowedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "ü", "Á", "É", "Í", "Ó", "Ú", "Ü"];
+
+    constructor(
+        numberOfCharacters = 10,
+        inputName
+    ) {
+        super(numberOfCharacters, inputName)
+
+        this.validationAction = () => {
+            input.addEventListener("input", () => {
+                const inputValue = input.value
+                inputValue.forEach(character => {
+                    if (this.forbiddenCharacters.includes(character)) {
+                        displayError(`${character} es inválido para ${this.inputName}. Sólo letras son admitidas en este campo.`)
+                        const replacementValue = inputValue.replace(character, "")
+                        input.value = replacementValue;
+                    }
+                });
+            })
+        }
     }
 }
