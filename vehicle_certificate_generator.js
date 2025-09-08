@@ -13,6 +13,7 @@ export default class VehicleCertificateGenerator {
         this.StoreOuterContainer(element)
         this.StorePageDatasetElement()
         this.SetMainApiEndpoint()
+        this.TestMainApiEndpoint()
         this.SetMainDatafileUrl()
         this.GenerateGeneratePdfButton(element)
         this.StoreCurrentDate()
@@ -28,56 +29,56 @@ export default class VehicleCertificateGenerator {
     }
 
     ComponentsConfig = [
-    {
-        name: 'nombre_de_la_empresa',
-        class: SingleInputField,
-        label: "Nombre de la empresa",
-        input: "SNIPER CERTIFICATE PRECISSION PRINTER C.A.",
-    },
-    {
-        name: 'fecha_de_emision',
-        class: MultiInputField,
-        label: "Fecha de Emisión",
-        inputs: 8
-    },
-    {
-        name: 'factura_1_n_fecha',
-        class: SingleInputField,
-        label: "Factura 1 N°/Fecha",
-        input: "Nombre de la empresa"
-    },
-    {
-        name: 'placa',
-        class: MultiInputField,
-        label: "Placa",
-        inputs: 7
-    },
-    {
-        name: 'marca',
-        class: SingleInputField,
-        label: "Marca",
-        input: "FORD"
-    },
-    {
-        name: 'modelo',
-        class: SingleInputField,
-        label: "Modelo",
-        input: "FORD"
-    },
-    {
-        name: 'ano_de_fabricacion',
-        class: MultiInputField,
-        label: "Año de frabricacion",
-        inputs: 4
-    },
-    {
-        name: 'ano_de_modelo',
-        class: MultiInputField,
-        label: "Año de Modelo",
-        inputs: 4
-    },
-];
-    
+        {
+            name: 'nombre_de_la_empresa',
+            class: SingleInputField,
+            label: "Nombre de la empresa",
+            input: "SNIPER CERTIFICATE PRECISSION PRINTER C.A.",
+        },
+        {
+            name: 'fecha_de_emision',
+            class: MultiInputField,
+            label: "Fecha de Emisión",
+            inputs: 8
+        },
+        {
+            name: 'factura_1_n_fecha',
+            class: SingleInputField,
+            label: "Factura 1 N°/Fecha",
+            input: "Nombre de la empresa"
+        },
+        {
+            name: 'placa',
+            class: MultiInputField,
+            label: "Placa",
+            inputs: 7
+        },
+        {
+            name: 'marca',
+            class: SingleInputField,
+            label: "Marca",
+            input: "FORD"
+        },
+        {
+            name: 'modelo',
+            class: SingleInputField,
+            label: "Modelo",
+            input: "FORD"
+        },
+        {
+            name: 'ano_de_fabricacion',
+            class: MultiInputField,
+            label: "Año de frabricacion",
+            inputs: 4
+        },
+        {
+            name: 'ano_de_modelo',
+            class: MultiInputField,
+            label: "Año de Modelo",
+            inputs: 4
+        },
+    ];
+
 
     GenerateNombreDeLaEmpresaComponent(mustLog) {
         this.PlacaTop = new NombreDeLaEmpresa(false, this.OuterContainer)
@@ -125,16 +126,73 @@ export default class VehicleCertificateGenerator {
         this.pageDatasetElement = document.getElementById("page_dataset_attributes")
     }
 
-    GenerateGeneratePdfButton() {
-        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type","button"]], this.OuterContainer, [], "Generar");
-    }
-
     SetMainApiEndpoint() {
         this.mainApiEndpoint = this.websiteUrl + this.pageDatasetElement.dataset.mainApiEndpoint;
     }
 
+    TestMainApiEndpoint() {
+        fetch(this.mainApiEndpoint)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log("Success:", data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    }
+
     SetMainDatafileUrl() {
         this.mainDataFileUrl = this.websiteUrl + this.pageDatasetElement.dataset.mainDataFileUrl;
+    }
+
+    GenerateGeneratePdfButton() {
+        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type", "button"]], this.OuterContainer, [], "Generar");
+
+        this.generatePdfButton.addEventListener("click", async () => {
+            var result = collectFormData();
+            try {
+                const response = await fetch(this.mainApiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(result)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                }
+
+                const pdfBlob = await response.blob();
+                const url = window.URL.createObjectURL(pdfBlob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = vehicleCertificateGenerator.printedFileName;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Download failed:', error);
+            }
+        })
+
+
+
+        function collectFormData() {
+            const inputs = document.querySelectorAll('input[name]');
+            const formData = {};
+            inputs.forEach(input => {
+                formData[input.name] = input.value;
+            });
+            return formData;
+        }
     }
 }
 
@@ -174,7 +232,7 @@ class MultiInputField extends VehicleRegistrationDocumentField {
 }
 
 class SingleInputField extends VehicleRegistrationDocumentField {
-    constructor(mustLog, parent, id, labelValue = "label", inputValue="input") {
+    constructor(mustLog, parent, id, labelValue = "label", inputValue = "input") {
         super(mustLog, parent, id, labelValue);
         this.input = this.ElementGenerator.Generate(
             mustLog,
