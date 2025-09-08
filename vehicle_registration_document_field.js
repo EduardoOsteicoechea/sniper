@@ -1,3 +1,5 @@
+import HTMLElementGenerator from "./html_generator.js";
+
 export default class VehicleRegistrationDocumentField {
 
     ElementGenerator = new HTMLElementGenerator()
