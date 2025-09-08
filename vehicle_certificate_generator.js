@@ -244,6 +244,12 @@ export default class VehicleCertificateGenerator {
             label: "Homologación Fecha",
             input: "20250908",
             validationClassArgs: [8, 2]
+        },
+        {
+            name: 'fecha_fin_convenio',
+            label: "Fecha Fin Convenio",
+            input: "20250908",
+            validationClassArgs: [8, 2]
         }
     ];
 
