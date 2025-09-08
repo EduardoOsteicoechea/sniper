@@ -36,7 +36,11 @@ export default class VehicleCertificateGenerator {
             config.name,
             config.label,
             config.input,
-            config.validationClass
+            new InputValidationBase(
+                config.validationClassArgs[0],
+                config.label,
+                config.validationClassArgs[1]
+            )
         ));
 
         console.log(this)
@@ -47,43 +51,61 @@ export default class VehicleCertificateGenerator {
             name: 'nombre_de_la_empresa',
             label: "Nombre de la empresa",
             input: "SNIPER CERTIFICATE PRECISSION PRINTER C.A.",
-            validationClass: new InputValidationBase(50, "Nombre de la empresa", 3)
+            validationClassArgs: [50, 3]
         },
         {
             name: 'fecha_de_emision',
             label: "Fecha de Emisión",
             input: "2025",
-            validationClass: new InputValidationBase(8, "Fecha de Emisión", 2)
+            validationClassArgs: [8, 2]
         },
         {
             name: 'serie_de_numero_de_factura_1',
             label: "Serie de Número de Factura 1",
             input: "SERIE A",
-            validationClass: new InputValidationBase(7, "Serie de Número de Factura", 1)
+            validationClassArgs: [7, 1]
         },
         {
             name: 'numero_de_factura_1',
             label: "Número de Factura 1",
             input: "00000020",
-            validationClass: new InputValidationBase(8, "Número de Factura 1", 2)
+            validationClassArgs: [8, 2]
         },
         {
             name: 'fecha_de_factura_1',
             label: "Fecha Factura 1",
             input: "20250908",
-            validationClass: new InputValidationBase(8, "Fecha Factura 1", 2)
+            validationClassArgs: [8, 2]
         },
         {
             name: 'placa',
             label: "Placa",
             input: "AD#J59R",
-            validationClass: new InputValidationBase(7, "placa", 3)
+            validationClassArgs: [7, 3]
         },
         {
             name: 'marca',
             label: "Marca",
             input: "LEILONG",
-            validationClass: new InputValidationBase(50, "Marca", 3)
+            validationClassArgs: [50, 3]
+        },
+        {
+            name: 'modelo',
+            label: "Modelo",
+            input: "AS 150",
+            validationClassArgs: [15, 3]
+        },
+        {
+            name: 'ano_de_fabricacion',
+            label: "Año de Fabricación",
+            input: "2025",
+            validationClassArgs: [4, 2]
+        },
+        {
+            name: 'serial_niv',
+            label: "Serial N.I.V.",
+            input: "L2YPCKLC3S0L02148",
+            validationClassArgs: [17, 2]
         }
     ];
 
