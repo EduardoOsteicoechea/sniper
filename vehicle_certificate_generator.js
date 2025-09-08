@@ -1,3 +1,8 @@
+import HTMLElementGenerator from "./html_generator.js";
+import HTMLComposedTags from "./html_composed_tags.js";
+import HTMLSimpleTags from "./html_simple_tags.js";
+import { AlfanumericValidation, NumericValidation, AlphabeticValidation } from './input_validation.js';
+
 export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
     
@@ -65,7 +70,7 @@ export default class VehicleCertificateGenerator {
         {
             name: 'fecha_de_factura_1',
             label: "Fecha Factura 1",
-            input: "2025",
+            input: "20250908",
             validationClass: new NumericValidation(8, "Fecha Factura 1")
         }
     ];
@@ -95,18 +100,6 @@ export default class VehicleCertificateGenerator {
             "day": [day[0], day[1],]
         }
         if (mustLog) console.log(this.time);
-    }
-
-    StorePageDatasetElement() {
-        this.pageDatasetElement = document.getElementById("page_dataset_attributes")
-    }
-
-    SetMainApiEndpoint() {
-        this.mainApiEndpoint = this.websiteUrl + this.pageDatasetElement.dataset.mainApiEndpoint;
-    }
-
-    SetMainDatafileUrl() {
-        this.mainDataFileUrl = this.websiteUrl + this.pageDatasetElement.dataset.mainDataFileUrl;
     }
 
     TestMainApiEndpoint() {
@@ -206,175 +199,6 @@ class SingleInputField extends VehicleRegistrationDocumentField {
 
         if (validationClass) {
             validationClass.validation(this.input)
-        }
-    }
-}
-
-class HTMLElementGenerator {
-    element = null;
-    Generate(
-        mustLog = false,
-        htmlTag,
-        id,
-        classes = [],
-        attributes = [],
-        parent = null,
-        children = [],
-        value = ""
-    ) {
-        this.element = document.createElement(htmlTag.Tag)
-
-        if (id) {
-            this.element.id = id;
-        }
-
-        attributes.forEach(element => {
-            this.element.setAttribute(element[0], element[1]);
-        });
-
-        classes.forEach(element => {
-            this.element.classList.add(element);
-        });
-
-        if (Array.isArray(children)) {
-            children.forEach(child => {
-                this.element.appendChild(child);
-            });
-        } else {
-            this.element.innerHTML = children;
-        }
-
-        if (parent) {
-            parent.appendChild(this.element);
-        }
-
-        if (value && htmlTag instanceof HTMLComposedTags) {
-            this.element.innerHTML = value
-        }
-
-        return this.element
-    }
-}
-
-class HTMLSimpleTags {
-    Tag = null
-    constructor(tag) {
-        this.Tag = tag
-    }
-}
-
-class HTMLComposedTags {
-    Tag = null
-    constructor(tag) {
-        this.Tag = tag
-    }
-}
-
-class InputValidationBase {
-    numberOfCharacters = 0;
-    inputName = "Input Name";
-    forbiddenCharacters = [""];
-    allowedCharacters = [""];
-
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        this.numberOfCharacters = numberOfCharacters
-        this.inputName = inputName
-    }
-
-    displayError(message) {
-        alert(message);
-    }
-
-    validateCharacterLength(input) {
-        const inputValue = input.value;
-
-        console.log("input.value")
-        console.log(inputValue)
-        console.log("this.numberOfCharacters")
-        console.log(this.numberOfCharacters)
-
-        if(inputValue.length > this.numberOfCharacters){
-            this.displayError(`"${this.numberOfCharacters}" es el máximo de caracteres para ${this.inputName}.`)
-            try {
-                const inputValueWithputLastCharacter = input.value.substring(0,input.value.length - 2)
-                input.value = inputValueWithputLastCharacter
-            } catch {}
-        }
-    }
-
-    validation(input) {
-        this.validateCharacterLength(input)        
-        this.validationAction(input)
-    }
-}
-
-class AlfanumericValidation extends InputValidationBase {
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        super(numberOfCharacters, inputName)
-        this.validationAction = (input) => {
-            input.addEventListener("change", () => {
-                const inputValue = input.value
-                for (let index = 0; index < inputValue.length; index++) {
-                    const character = inputValue[index];                    
-                    if (this.forbiddenCharacters.includes(character)) {
-                        displayError(`${character} es inválido para ${this.inputName}`)
-                        const replacementValue = inputValue.replace(character, "")
-                        input.value = replacementValue;
-                    }
-                }
-            })
-        }
-    }
-}
-
-class NumericValidation extends InputValidationBase {
-    allowedCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        super(numberOfCharacters, inputName)
-        this.validationAction = (input) => {
-            input.addEventListener("change", () => {
-                const inputValue = input.value
-                for (let index = 0; index < inputValue.length; index++) {
-                    const character = inputValue[index];                  
-                    if (this.forbiddenCharacters.includes(character)) {
-                        displayError(`${character} es inválido para ${this.inputName}. Sólo números son admitidos en este campo.`)
-                        const replacementValue = inputValue.replace(character, "")
-                        input.value = replacementValue;
-                    }
-                }
-            })
-        }
-    }
-}
-
-class AlphabeticValidation extends InputValidationBase {
-    allowedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "ü", "Á", "É", "Í", "Ó", "Ú", "Ü"];
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        super(numberOfCharacters, inputName)
-        this.validationAction = (input) => {
-            input.addEventListener("change", () => {
-                const inputValue = input.value
-                for (let index = 0; index < inputValue.length; index++) {
-                    const character = inputValue[index];
-                    if (this.forbiddenCharacters.includes(character)) {
-                        displayError(`${character} es inválido para ${this.inputName}. Sólo letras son admitidas en este campo.`)
-                        const replacementValue = inputValue.replace(character, "")
-                        input.value = replacementValue;
-                    }
-                }
-            })
         }
     }
 }
