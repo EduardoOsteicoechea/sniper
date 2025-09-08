@@ -35,7 +35,7 @@ export default class VehicleCertificateGenerator {
         this.StoreCurrentDate()
         this.StoreCurrentTime()
 
-        this.components = this.componentConfigData.map(config => new VehicleRegistrationDocumentField(
+        this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
             false,
             this.outerContainer,
             config.name,
@@ -105,7 +105,7 @@ export default class VehicleCertificateGenerator {
             })
             .then(data => {
                 console.log("Success:", data);
-                this.componentConfigData = data.fieldsData;
+                this.componentConfigData = data;
             })
             .catch(error => {
                 console.error("Error:", error);
