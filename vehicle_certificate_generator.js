@@ -1,4 +1,4 @@
-class VehicleCertificateGenerator {
+export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
     OuterContainer = null
     PlacaTop = null
