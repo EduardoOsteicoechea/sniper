@@ -19,3 +19,5 @@ const vehicleCertificateGenerator = new VehicleCertificateGenerator(
     mainDataFileUrl,
     vehicleRegistrationFieldsDataFileUrl
 );
+
+vehicleCertificateGenerator.initialize()

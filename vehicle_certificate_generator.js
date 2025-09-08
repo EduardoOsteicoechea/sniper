@@ -12,7 +12,7 @@ export default class VehicleCertificateGenerator {
     mainDataFileUrl = ""
     componentConfigDataFileUrl = ""
     componentConfigData = ""
-    
+
     PlacaTop = null
     printableOverlayFileName = "sample_name.pdf"
     generatePdfButton = null
@@ -30,25 +30,34 @@ export default class VehicleCertificateGenerator {
         this.mainDataFileUrl = mainDataFileUrl
         this.componentConfigDataFileUrl = componentConfigDataFileUrl
 
-        this.GetComponentConfigData()
         this.GenerateGeneratePdfButton()
         this.StoreCurrentDate()
         this.StoreCurrentTime()
+    }
 
-        this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
-            false,
-            this.outerContainer,
-            config.name,
-            config.label,
-            config.input,
-            new InputValidationBase(
-                config.validationClassArgs[0],
+    async initialize() {
+        // This method handles all asynchronous setup
+        try {
+            this.componentConfigData = await this.GetComponentConfigData();
+
+            // Now that the data is available, you can safely use it
+            this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
+                false,
+                this.outerContainer,
+                config.name,
                 config.label,
-                config.validationClassArgs[1]
-            )
-        ));
+                config.input,
+                new InputValidationBase(
+                    config.validationClassArgs[0],
+                    config.label,
+                    config.validationClassArgs[1]
+                )
+            ));
 
-        console.log(this)
+        } catch (error) {
+            console.error("Failed to initialize component config data:", error);
+            // Handle error appropriately, e.g., show an error message to the user
+        }
     }
 
 
