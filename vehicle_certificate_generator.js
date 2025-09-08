@@ -39,6 +39,8 @@ export default class VehicleCertificateGenerator {
         try {
             this.componentConfigData = await this.GetComponentConfigData();
 
+            console.log(this.componentConfigData);
+
             this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
                 false,
                 this.outerContainer,
