@@ -6,6 +6,8 @@ const pageDatasetElement = document.getElementById("page_dataset_attributes");
 
 const websiteUrl = "https://eduardoos.com";
 
+const vehicleRegistrationFieldsDataFileUrl = "https://eduardoos.com/data_file/vehicle_registration_fields_data.json";
+
 const mainApiEndpoint = websiteUrl + pageDatasetElement.dataset.mainApiEndpoint;
 
 const mainDataFileUrl = websiteUrl + pageDatasetElement.dataset.mainDataFileUrl;
@@ -14,5 +16,6 @@ const vehicleCertificateGenerator = new VehicleCertificateGenerator(
     componentContainerElement, 
     websiteUrl,
     mainApiEndpoint,
-    mainDataFileUrl
+    mainDataFileUrl,
+    vehicleRegistrationFieldsDataFileUrl
 );
