@@ -298,7 +298,7 @@ class VehicleRegistrationDocumentField {
     ComponentLabel;
     ComponentInputsContainer;
 
-    constructor(mustLog, parent, id, labelValue = "label") {
+    constructor(mustLog, parent, id, labelValue = "label", inputValue = "default") {
 
         this.ComponentContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], parent);
         
