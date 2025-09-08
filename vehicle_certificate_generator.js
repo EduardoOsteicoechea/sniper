@@ -336,14 +336,13 @@ class NumericValidation extends InputValidationBase {
             input.addEventListener("input", () => {
                 const inputValue = input.value
                 for (let index = 0; index < inputValue.length; index++) {
-                    const character = inputValue[index];                    
-                    if (this.forbiddenCharacters.includes(character)) {
+                    const character = inputValue[index];                  
                     if (this.forbiddenCharacters.includes(character)) {
                         displayError(`${character} es inválido para ${this.inputName}. Sólo números son admitidos en este campo.`)
                         const replacementValue = inputValue.replace(character, "")
                         input.value = replacementValue;
                     }
-                };
+                }
             })
         }
     }
@@ -367,7 +366,7 @@ class AlphabeticValidation extends InputValidationBase {
                         const replacementValue = inputValue.replace(character, "")
                         input.value = replacementValue;
                     }
-                };
+                }
             })
         }
     }
