@@ -58,6 +58,7 @@ export default class VehicleCertificateGenerator {
             console.error("Failed to initialize component config data:", error);
         }
     }
+    
     TestMainApiEndpoint() {
         fetch(this.mainApiEndpoint)
             .then(response => {
@@ -121,11 +122,8 @@ export default class VehicleCertificateGenerator {
                 a.click();
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
-
             } catch (error) {
-
                 console.error('Download failed:', error);
-
             }
         })
     }

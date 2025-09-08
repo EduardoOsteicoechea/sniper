@@ -20,4 +20,4 @@ const vehicleCertificateGenerator = new VehicleCertificateGenerator(
     vehicleRegistrationFieldsDataFileUrl
 );
 
-vehicleCertificateGenerator.initialize()
+await vehicleCertificateGenerator.initialize()
