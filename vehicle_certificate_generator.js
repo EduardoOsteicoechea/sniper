@@ -292,6 +292,7 @@ class InputValidationBase {
         const inputValue = input.value;
         if(inputValue.length > this.numberOfCharacters){
             this.displayError(`"${this.numberOfCharacters}" es el máximo de caracteres para ${this.inputName}.`)
+            input.value = input.value.substring(0,input.value.length - 2)
         }
         this.validationAction(input)
     }
@@ -300,21 +301,21 @@ class InputValidationBase {
 class AlfanumericValidation extends InputValidationBase {
     constructor(
         numberOfCharacters,
-        inputName,
-        input
+        inputName
     ) {
         super(numberOfCharacters, inputName)
 
         this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
-                inputValue.forEach(character => {
+                for (let index = 0; index < inputValue.length; index++) {
+                    const character = inputValue[index];                    
                     if (this.forbiddenCharacters.includes(character)) {
                         displayError(`${character} es inválido para ${this.inputName}`)
                         const replacementValue = inputValue.replace(character, "")
                         input.value = replacementValue;
                     }
-                });
+                }
             })
         }
     }
@@ -331,13 +332,15 @@ class NumericValidation extends InputValidationBase {
         this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
-                inputValue.forEach(character => {
+                for (let index = 0; index < inputValue.length; index++) {
+                    const character = inputValue[index];                    
+                    if (this.forbiddenCharacters.includes(character)) {
                     if (this.forbiddenCharacters.includes(character)) {
                         displayError(`${character} es inválido para ${this.inputName}. Sólo números son admitidos en este campo.`)
                         const replacementValue = inputValue.replace(character, "")
                         input.value = replacementValue;
                     }
-                });
+                };
             })
         }
     }
@@ -354,13 +357,14 @@ class AlphabeticValidation extends InputValidationBase {
         this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
-                inputValue.forEach(character => {
+                for (let index = 0; index < inputValue.length; index++) {
+                    const character = inputValue[index];
                     if (this.forbiddenCharacters.includes(character)) {
                         displayError(`${character} es inválido para ${this.inputName}. Sólo letras son admitidas en este campo.`)
                         const replacementValue = inputValue.replace(character, "")
                         input.value = replacementValue;
                     }
-                });
+                };
             })
         }
     }
