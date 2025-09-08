@@ -318,7 +318,7 @@ class AlfanumericValidation extends InputValidationBase {
     ) {
         super(numberOfCharacters, inputName)
         this.validationAction = (input) => {
-            input.addEventListener("input", () => {
+            input.addEventListener("change", () => {
                 const inputValue = input.value
                 for (let index = 0; index < inputValue.length; index++) {
                     const character = inputValue[index];                    
@@ -341,7 +341,7 @@ class NumericValidation extends InputValidationBase {
     ) {
         super(numberOfCharacters, inputName)
         this.validationAction = (input) => {
-            input.addEventListener("input", () => {
+            input.addEventListener("change", () => {
                 const inputValue = input.value
                 for (let index = 0; index < inputValue.length; index++) {
                     const character = inputValue[index];                  
@@ -364,7 +364,7 @@ class AlphabeticValidation extends InputValidationBase {
     ) {
         super(numberOfCharacters, inputName)
         this.validationAction = (input) => {
-            input.addEventListener("input", () => {
+            input.addEventListener("change", () => {
                 const inputValue = input.value
                 for (let index = 0; index < inputValue.length; index++) {
                     const character = inputValue[index];
