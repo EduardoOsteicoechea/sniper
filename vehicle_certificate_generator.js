@@ -232,6 +232,18 @@ export default class VehicleCertificateGenerator {
             label: "REFECIV",
             input: "20250908",
             validationClassArgs: [8, 3]
+        },
+        {
+            name: 'homologacion_n',
+            label: "Homologación N°",
+            input: "AAAAAAAAAAAAAAA",
+            validationClassArgs: [15, 3]
+        },
+        {
+            name: 'homologacion_fecha',
+            label: "Homologación Fecha",
+            input: "20250908",
+            validationClassArgs: [8, 2]
         }
     ];
 
