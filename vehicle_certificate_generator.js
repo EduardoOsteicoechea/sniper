@@ -2,10 +2,19 @@ class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
     OuterContainer = null
     PlacaTop = null
+    printedFileName = "sample_name.pdf"
+    generatePdfButton = null
+    websiteUrl = ""
+    mainApiEndpoint = ""
+    mainDataFileUrl = ""
 
-
-    constructor(elementId) {
-        this.StoreOuterContainer(elementId)
+    constructor(element, websiteUrl) {
+        this.websiteUrl = websiteUrl
+        this.StoreOuterContainer(element)
+        this.StorePageDatasetElement()
+        this.SetMainApiEndpoint()
+        this.SetMainDatafileUrl()
+        this.GenerateGeneratePdfButton(element)
         this.StoreCurrentDate()
         this.StoreCurrentTime()
         this.components = this.ComponentsConfig.map(config => {
@@ -15,6 +24,7 @@ class VehicleCertificateGenerator {
                 return new config.class(false, this.OuterContainer, config.name, config.label, config.input);
             }
         });
+        console.log(this)
     }
 
     ComponentsConfig = [
@@ -104,11 +114,27 @@ class VehicleCertificateGenerator {
         if (mustLog) console.log(this.time);
     }
 
-    StoreOuterContainer(elementId) {
-        this.OuterContainer = document.getElementById(elementId)
+    StoreOuterContainer(element) {
+        this.OuterContainer = document.getElementById(element)
         if (!this.OuterContainer) {
-            console.error(`Invalid elementId ${elementId}`)
+            console.error(`Invalid element ${element}`)
         }
+    }
+
+    StorePageDatasetElement() {
+        this.pageDatasetElement = document.getElementById(page_dataset_attributes)
+    }
+
+    GenerateGeneratePdfButton() {
+        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type","button"]], this.OuterContainer, [], "Generar");
+    }
+
+    SetMainApiEndpoint() {
+        this.mainApiEndpoint = this.websiteUrl + this.pageDatasetElement.dataset.mainApiEndpoint;
+    }
+
+    SetMainDatafileUrl() {
+        this.mainDataFileUrl = this.websiteUrl + this.pageDatasetElement.dataset.mainDataFileUrl;
     }
 }
 

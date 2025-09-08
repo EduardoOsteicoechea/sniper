@@ -1,9 +1,11 @@
-const save_button = document.getElementById("save_button");
-const pythonApi = "https://eduardoos.com/api/sniper"
+// const save_button = document.getElementById("save_button");
+// const pythonApi = "https://eduardoos.com/api/sniper"
 
-new VehicleCertificateGenerator("vehicle_certificate_generator_outer_container")
+const vehicleCertificateGenerator = new VehicleCertificateGenerator(
+    document.getElementsByTagName("main")[0], "https://eduardoos.com/"
+)
 
-save_button.addEventListener("click", async () => {
+vehicleCertificateGenerator.generatePdfButton.addEventListener("click", async () => {
     var result = collectFormData();
     try {
         const response = await fetch(pythonApi, {
@@ -23,7 +25,7 @@ save_button.addEventListener("click", async () => {
         const a = document.createElement('a');
         a.style.display = 'none';
         a.href = url;
-        a.download = 'generated_report.pdf';
+        a.download = vehicleCertificateGenerator.printedFileName;
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
