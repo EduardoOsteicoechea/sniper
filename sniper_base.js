@@ -1,7 +1,4 @@
-// const save_button = document.getElementById("save_button");
-// const pythonApi = "https://eduardoos.com/api/sniper"
-
-import vehicleCertificateGenerator from "vehicle_certificate_generator.js";
+import VehicleCertificateGenerator from "vehicle_certificate_generator.js";
 
 const vehicleCertificateGenerator = new VehicleCertificateGenerator(
     document.getElementsByTagName("main")[0], "https://eduardoos.com/"
