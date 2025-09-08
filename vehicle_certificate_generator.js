@@ -36,11 +36,9 @@ export default class VehicleCertificateGenerator {
     }
 
     async initialize() {
-        // This method handles all asynchronous setup
         try {
             this.componentConfigData = await this.GetComponentConfigData();
 
-            // Now that the data is available, you can safely use it
             this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
                 false,
                 this.outerContainer,
@@ -56,38 +54,8 @@ export default class VehicleCertificateGenerator {
 
         } catch (error) {
             console.error("Failed to initialize component config data:", error);
-            // Handle error appropriately, e.g., show an error message to the user
         }
     }
-
-
-    StoreCurrentTime(elementId, mustLog = false) {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        this.time = {
-            "hours": [hours[0], hours[1]],
-            "minutes": [minutes[0], minutes[1]],
-            "seconds": [seconds[0], seconds[1]]
-        }
-        if (mustLog) console.log(this.time);
-    }
-
-    StoreCurrentDate(elementId, mustLog = false) {
-        const today = new Date();
-        const year = today.getFullYear() + "";
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const day = String(today.getDate()).padStart(2, '0');
-        console.log(year);
-        this.date = {
-            "year": [year[0], year[1], year[2], year[3],],
-            "month": [month[0], month[1],],
-            "day": [day[0], day[1],]
-        }
-        if (mustLog) console.log(this.time);
-    }
-
     TestMainApiEndpoint() {
         fetch(this.mainApiEndpoint)
             .then(response => {
@@ -104,7 +72,7 @@ export default class VehicleCertificateGenerator {
             });
     }
 
-    GetComponentConfigData() {
+    async GetComponentConfigData() {
         fetch(this.componentConfigDataFileUrl)
             .then(response => {
                 if (!response.ok) {
@@ -114,7 +82,7 @@ export default class VehicleCertificateGenerator {
             })
             .then(data => {
                 console.log("Success:", data);
-                this.componentConfigData = data;
+                return data;
             })
             .catch(error => {
                 console.error("Error:", error);
@@ -167,5 +135,32 @@ export default class VehicleCertificateGenerator {
             formData[input.name] = input.value;
         });
         return formData;
+    }
+
+    StoreCurrentTime(elementId, mustLog = false) {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        this.time = {
+            "hours": [hours[0], hours[1]],
+            "minutes": [minutes[0], minutes[1]],
+            "seconds": [seconds[0], seconds[1]]
+        }
+        if (mustLog) console.log(this.time);
+    }
+
+    StoreCurrentDate(elementId, mustLog = false) {
+        const today = new Date();
+        const year = today.getFullYear() + "";
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        console.log(year);
+        this.date = {
+            "year": [year[0], year[1], year[2], year[3],],
+            "month": [month[0], month[1],],
+            "day": [day[0], day[1],]
+        }
+        if (mustLog) console.log(this.time);
     }
 }
