@@ -5,7 +5,7 @@ import InputValidationBase from './input_validation.js';
 
 export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
-    
+
     outerContainer = null
     websiteUrl = ""
     mainApiEndpoint = ""
@@ -16,7 +16,7 @@ export default class VehicleCertificateGenerator {
     generatePdfButton = null
 
     constructor(
-        outerContainer, 
+        outerContainer,
         websiteUrl,
         mainApiEndpoint,
         mainDataFileUrl
@@ -72,6 +72,18 @@ export default class VehicleCertificateGenerator {
             label: "Fecha Factura 1",
             input: "20250908",
             validationClass: new InputValidationBase(8, "Fecha Factura 1", 2)
+        },
+        {
+            name: 'placa',
+            label: "Placa",
+            input: "AD#J59R",
+            validationClass: new InputValidationBase(7, "placa", 3)
+        },
+        {
+            name: 'marca',
+            label: "Marca",
+            input: "LEILONG",
+            validationClass: new InputValidationBase(50, "Marca", 3)
         }
     ];
 
@@ -122,7 +134,9 @@ export default class VehicleCertificateGenerator {
         this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type", "button"]], this.outerContainer, [], "Generar");
 
         this.generatePdfButton.addEventListener("click", async () => {
-            var result = collectFormData();
+
+            var result = this.collectFormData();
+
             try {
                 const response = await fetch(this.mainApiEndpoint, {
                     method: 'POST',
@@ -146,19 +160,22 @@ export default class VehicleCertificateGenerator {
                 a.click();
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
+
             } catch (error) {
+
                 console.error('Download failed:', error);
+
             }
         })
+    }
 
-        function collectFormData() {
-            const inputs = document.querySelectorAll('input[name]');
-            const formData = {};
-            inputs.forEach(input => {
-                formData[input.name] = input.value;
-            });
-            return formData;
-        }
+    collectFormData() {
+        const inputs = document.querySelectorAll('input[name]');
+        const formData = {};
+        inputs.forEach(input => {
+            formData[input.name] = input.value;
+        });
+        return formData;
     }
 }
 

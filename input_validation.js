@@ -39,11 +39,16 @@ export default class InputValidationBase {
         }
     }
 
-    displayError(message) {
+    displayError(message = "Empty error message") {
         alert(message);
     }
 
     validation(input) {
+        
+        if (!input || !(input instanceof HTMLInputElement)) {
+            throw new Error("Invalid input element was provided. It must be an HTML input element.");
+        }
+
         input.addEventListener("input", () => {
 
             const inputValue = input.value;
