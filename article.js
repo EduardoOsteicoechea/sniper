@@ -1,5 +1,5 @@
 const PageArticle001 = document.getElementsByTagName("article")[0];
-const webUrl = `un_dios_prudente.json`;
+const webUrl = `data_file/un_dios_prudente.json`;
 
 setTimeout(()=>{
     reloadArticle(webUrl)
