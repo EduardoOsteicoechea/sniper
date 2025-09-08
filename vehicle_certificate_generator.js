@@ -30,7 +30,7 @@ export default class VehicleCertificateGenerator {
         this.StoreCurrentDate()
         this.StoreCurrentTime()
 
-        this.components = this.ComponentsConfig.map(config => new SingleInputField(
+        this.components = this.ComponentsConfig.map(config => new VehicleRegistrationDocumentField(
             false,
             this.outerContainer,
             config.name,
@@ -105,7 +105,73 @@ export default class VehicleCertificateGenerator {
             name: 'serial_niv',
             label: "Serial N.I.V.",
             input: "L2YPCKLC3S0L02148",
-            validationClassArgs: [17, 2]
+            validationClassArgs: [17, 3]
+        },
+        {
+            name: 'ano_modelo',
+            label: "Año Modelo",
+            input: "2025",
+            validationClassArgs: [4, 2]
+        },
+        {
+            name: 'serial_chasis',
+            label: "Serial Chasis",
+            input: "L2YPCKLC3S0L02148",
+            validationClassArgs: [17, 3]
+        },
+        {
+            name: 'serial_motor',
+            label: "Serial Motor",
+            input: "L2YPCKLC3S0L021480",
+            validationClassArgs: [18, 3]
+        },
+        {
+            name: 'serial_carrocería',
+            label: "Serial Carrocería",
+            input: "L2YPCKLC3S0L021480",
+            validationClassArgs: [18, 3]
+        },
+        {
+            name: 'serial_carrocería',
+            label: "Serial Carrocería",
+            input: "L2YPCKLC3S0L021480",
+            validationClassArgs: [18, 3]
+        },
+        {
+            name: 'clase',
+            label: "Clase",
+            input: "MT",
+            validationClassArgs: [3, 1]
+        },
+        {
+            name: 'tipo',
+            label: "Tipo",
+            input: "MT",
+            validationClassArgs: [3, 1]
+        },
+        {
+            name: 'uso',
+            label: "Uso",
+            input: "PR",
+            validationClassArgs: [3, 1]
+        },
+        {
+            name: 'servicio',
+            label: "Servicio",
+            input: "PR",
+            validationClassArgs: [3, 1]
+        },
+        {
+            name: 'color_pr',
+            label: "Color Pr",
+            input: "RJ",
+            validationClassArgs: [2, 1]
+        },
+        {
+            name: 'color_sec',
+            label: "Color Sec",
+            input: "",
+            validationClassArgs: [2, 1]
         }
     ];
 
@@ -207,26 +273,15 @@ class VehicleRegistrationDocumentField {
     ComponentContainer;
     ComponentLabel;
     ComponentInputsContainer;
-    constructor(mustLog, parent, id, labelValue = "label") {
-        this.ComponentContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], parent);
-        this.ComponentLabel = this.ElementGenerator.Generate(true, new HTMLComposedTags("label"), `${id}_label`, ["sniper_list_item_label"], [], this.ComponentContainer, [], labelValue);
-        this.ComponentInputsContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_inputs_container`, ["sniper_list_item_inputs_container"], [], this.ComponentContainer);
-    }
-    HTML() {
-        return this.ComponentContainer;
-    }
-}
 
-class SingleInputField extends VehicleRegistrationDocumentField {
-    constructor(
-        mustLog,
-        parent,
-        id,
-        labelValue = "label",
-        inputValue = "input",
-        validationClass = null
-    ) {
-        super(mustLog, parent, id, labelValue);
+    constructor(mustLog, parent, id, labelValue = "label") {
+
+        this.ComponentContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], parent);
+        
+        this.ComponentLabel = this.ElementGenerator.Generate(true, new HTMLComposedTags("label"), `${id}_label`, ["sniper_list_item_label"], [], this.ComponentContainer, [], labelValue);
+
+        this.ComponentInputsContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_inputs_container`, ["sniper_list_item_inputs_container"], [], this.ComponentContainer);
+
         this.input = this.ElementGenerator.Generate(
             mustLog,
             new HTMLSimpleTags("input"),
@@ -239,5 +294,9 @@ class SingleInputField extends VehicleRegistrationDocumentField {
         if (validationClass) {
             validationClass.validation(this.input)
         }
+    }
+
+    HTML() {
+        return this.ComponentContainer;
     }
 }
