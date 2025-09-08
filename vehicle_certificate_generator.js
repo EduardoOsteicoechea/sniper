@@ -33,7 +33,7 @@ export default class VehicleCertificateGenerator {
             config.input,
             config.validationClass
         ));
-        
+
         console.log(this)
     }
 
@@ -301,11 +301,12 @@ class AlfanumericValidation extends InputValidationBase {
 
     constructor(
         numberOfCharacters = 10,
-        inputName
+        inputName,
+        input
     ) {
         super(numberOfCharacters, inputName)
 
-        this.validationAction = () => {
+        this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
                 inputValue.forEach(character => {
@@ -330,7 +331,7 @@ class NumericValidation extends InputValidationBase {
     ) {
         super(numberOfCharacters, inputName)
 
-        this.validationAction = () => {
+        this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
                 inputValue.forEach(character => {
