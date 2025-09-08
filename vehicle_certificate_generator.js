@@ -356,7 +356,7 @@ class AlphabeticValidation extends InputValidationBase {
     ) {
         super(numberOfCharacters, inputName)
 
-        this.validationAction = () => {
+        this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
                 inputValue.forEach(character => {
