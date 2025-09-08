@@ -122,7 +122,7 @@ export default class VehicleCertificateGenerator {
     }
 
     StorePageDatasetElement() {
-        this.pageDatasetElement = document.getElementById(page_dataset_attributes)
+        this.pageDatasetElement = document.getElementById("page_dataset_attributes")
     }
 
     GenerateGeneratePdfButton() {
