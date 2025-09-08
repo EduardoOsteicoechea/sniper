@@ -1,4 +1,5 @@
 import HTMLElementGenerator from "./html_generator.js";
+import HTMLComposedTags from "./html_composed_tags.js";
 
 export default class VehicleRegistrationDocumentField {
 
