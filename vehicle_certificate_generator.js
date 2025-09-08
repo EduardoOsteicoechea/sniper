@@ -58,25 +58,9 @@ export default class VehicleCertificateGenerator {
             console.error("Failed to initialize component config data:", error);
         }
     }
-    
-    TestMainApiEndpoint() {
-        fetch(this.mainApiEndpoint)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                console.log("Success:", data);
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-    }
 
     async GetComponentConfigData() {
-        await fetch(this.componentConfigDataFileUrl)
+        return await fetch(this.componentConfigDataFileUrl)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -88,6 +72,22 @@ export default class VehicleCertificateGenerator {
                 console.log("Success:", data);
 
                 return data;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    }
+    
+    TestMainApiEndpoint() {
+        fetch(this.mainApiEndpoint)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log("Success:", data);
             })
             .catch(error => {
                 console.error("Error:", error);
