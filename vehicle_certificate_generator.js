@@ -293,12 +293,20 @@ export default class VehicleCertificateGenerator {
 
 
 class VehicleRegistrationDocumentField {
+
     ElementGenerator = new HTMLElementGenerator()
     ComponentContainer;
     ComponentLabel;
     ComponentInputsContainer;
 
-    constructor(mustLog, parent, id, labelValue = "label", inputValue = "default") {
+    constructor(
+        mustLog, 
+        parent, 
+        id, 
+        labelValue = "label", 
+        inputValue = "default",
+        validationClass = null,
+    ) {
 
         this.ComponentContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], parent);
         
