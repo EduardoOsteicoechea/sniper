@@ -288,8 +288,14 @@ class InputValidationBase {
         alert(message);
     }
 
-    validation(input) {
+    validateCharacterLength(input) {
         const inputValue = input.value;
+
+        console.log("input.value")
+        console.log(inputValue)
+        console.log("this.numberOfCharacters")
+        console.log(this.numberOfCharacters)
+
         if(inputValue.length > this.numberOfCharacters){
             this.displayError(`"${this.numberOfCharacters}" es el máximo de caracteres para ${this.inputName}.`)
             try {
@@ -297,6 +303,10 @@ class InputValidationBase {
                 input.value = inputValueWithputLastCharacter
             } catch {}
         }
+    }
+
+    validation(input) {
+        this.validateCharacterLength(input)        
         this.validationAction(input)
     }
 }
@@ -307,7 +317,6 @@ class AlfanumericValidation extends InputValidationBase {
         inputName
     ) {
         super(numberOfCharacters, inputName)
-
         this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
@@ -331,7 +340,6 @@ class NumericValidation extends InputValidationBase {
         inputName
     ) {
         super(numberOfCharacters, inputName)
-
         this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
@@ -355,7 +363,6 @@ class AlphabeticValidation extends InputValidationBase {
         inputName
     ) {
         super(numberOfCharacters, inputName)
-
         this.validationAction = (input) => {
             input.addEventListener("input", () => {
                 const inputValue = input.value
