@@ -80,7 +80,7 @@ export default class VehicleCertificateGenerator {
         {
             name: 'placa',
             label: "Placa",
-            input: "AD#J59R",
+            input: "AD3J59R",
             validationClassArgs: [7, 3]
         },
         {
@@ -172,6 +172,30 @@ export default class VehicleCertificateGenerator {
             label: "Color Sec",
             input: "",
             validationClassArgs: [2, 1]
+        },
+        {
+            name: 'n_puestos',
+            label: "N° de puestos",
+            input: "2",
+            validationClassArgs: [3, 2]
+        },
+        {
+            name: 'n_ejes',
+            label: "N° de Ejes",
+            input: "2",
+            validationClassArgs: [1, 2]
+        },
+        {
+            name: 'peso_tara',
+            label: "Peso (Tara)",
+            input: "150",
+            validationClassArgs: [5, 2]
+        },
+        {
+            name: 'cap_de_carga',
+            label: "Cap de Carga",
+            input: "150",
+            validationClassArgs: [5, 2]
         }
     ];
 
