@@ -8,7 +8,10 @@ export default class VehicleCertificateGenerator {
     mainApiEndpoint = ""
     mainDataFileUrl = ""
 
-    constructor(element, websiteUrl) {
+    constructor(
+        element, 
+        websiteUrl
+    ) {
         this.websiteUrl = websiteUrl
         this.StoreOuterContainer(element)
         this.StorePageDatasetElement()
@@ -116,7 +119,7 @@ export default class VehicleCertificateGenerator {
     }
 
     StoreOuterContainer(element) {
-        this.OuterContainer = document.getElementById(element)
+        this.OuterContainer = element
         if (!this.OuterContainer) {
             console.error(`Invalid element ${element}`)
         }
