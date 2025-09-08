@@ -101,7 +101,7 @@ export default class VehicleCertificateGenerator {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                return response.text();
+                return response.json();
             })
             .then(data => {
                 console.log("Success:", data);
