@@ -292,7 +292,10 @@ class InputValidationBase {
         const inputValue = input.value;
         if(inputValue.length > this.numberOfCharacters){
             this.displayError(`"${this.numberOfCharacters}" es el máximo de caracteres para ${this.inputName}.`)
-            input.value = input.value.substring(0,input.value.length - 2)
+            try {
+                const inputValueWithputLastCharacter = input.value.substring(0,input.value.length - 2)
+                input.value = inputValueWithputLastCharacter
+            } catch {}
         }
         this.validationAction(input)
     }
