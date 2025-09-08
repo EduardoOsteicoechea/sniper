@@ -1,15 +1,35 @@
+export default class InputValidationBase {
+    alphabeticCharacters = [" ",".", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "ü", "Á", "É", "Í", "Ó", "Ú", "Ü"]
 
-class InputValidationBase {
+    numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+    alphanumericCharacters = [...alphabeticCharacters, ...numericCharacters];
+
     numberOfCharacters = 0;
     inputName = "";
     allowedCharacters = [""];
 
     constructor(
         numberOfCharacters,
-        inputName
+        inputName,
+        validationType = 1
     ) {
         this.numberOfCharacters = numberOfCharacters
         this.inputName = inputName
+        switch (validationType) {
+            case 1:
+                this.allowedCharacters = new Set(this.alphabeticCharacters);
+                break;
+            case 2:
+                this.allowedCharacters = new Set(this.numericCharacters);
+                break;
+            case 3:
+                this.allowedCharacters = new Set([...this.alphabeticCharacters, ...this.numericCharacters]);
+                break;        
+            default:
+                this.allowedCharacters = new Set([...this.alphabeticCharacters, ...this.numericCharacters]);
+                break;
+        }
     }
 
     displayError(message) {
@@ -34,7 +54,7 @@ class InputValidationBase {
 
             let sanitizedValue = '';
             for (const character of input.value) {
-                if (this.allowedCharacters.includes(character)) {
+                if (this.allowedCharacters.has(character)) {
                     sanitizedValue += character;
                 } else {
                     this.displayError(`${character} es inválido para ${this.inputName}.`);
@@ -42,35 +62,5 @@ class InputValidationBase {
             }
             input.value = sanitizedValue;
         })
-    }
-}
-
-export class AlfanumericValidation extends InputValidationBase {
-    allowedCharacters = [" ",".", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "ü", "Á", "É", "Í", "Ó", "Ú", "Ü", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        super(numberOfCharacters, inputName)
-    }
-}
-
-export class NumericValidation extends InputValidationBase {
-    allowedCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        super(numberOfCharacters, inputName)
-    }
-}
-
-export class AlphabeticValidation extends InputValidationBase {
-    allowedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "á", "é", "í", "ó", "ú", "ü", "Á", "É", "Í", "Ó", "Ú", "Ü"];
-    constructor(
-        numberOfCharacters,
-        inputName
-    ) {
-        super(numberOfCharacters, inputName)
     }
 }

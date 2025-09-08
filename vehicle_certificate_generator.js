@@ -1,7 +1,7 @@
 import HTMLElementGenerator from "./html_generator.js";
 import HTMLComposedTags from "./html_composed_tags.js";
 import HTMLSimpleTags from "./html_simple_tags.js";
-import { AlfanumericValidation, NumericValidation, AlphabeticValidation } from './input_validation.js';
+import InputValidationBase from './input_validation.js';
 
 export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
@@ -47,31 +47,31 @@ export default class VehicleCertificateGenerator {
             name: 'nombre_de_la_empresa',
             label: "Nombre de la empresa",
             input: "SNIPER CERTIFICATE PRECISSION PRINTER C.A.",
-            validationClass: new AlfanumericValidation(50, "Nombre de la empresa")
+            validationClass: new InputValidationBase(50, "Nombre de la empresa", 3)
         },
         {
             name: 'fecha_de_emision',
             label: "Fecha de Emisión",
             input: "2025",
-            validationClass: new NumericValidation(8, "Fecha de Emisión")
+            validationClass: new InputValidationBase(8, "Fecha de Emisión", 2)
         },
         {
             name: 'serie_de_numero_de_factura_1',
             label: "Serie de Número de Factura 1",
             input: "SERIE A",
-            validationClass: new AlphabeticValidation(7, "Serie de Número de Factura")
+            validationClass: new InputValidationBase(7, "Serie de Número de Factura", 1)
         },
         {
             name: 'numero_de_factura_1',
             label: "Número de Factura 1",
             input: "00000020",
-            validationClass: new NumericValidation(8, "Número de Factura 1")
+            validationClass: new InputValidationBase(8, "Número de Factura 1", 2)
         },
         {
             name: 'fecha_de_factura_1',
             label: "Fecha Factura 1",
             input: "20250908",
-            validationClass: new NumericValidation(8, "Fecha Factura 1")
+            validationClass: new InputValidationBase(8, "Fecha Factura 1", 2)
         }
     ];
 
