@@ -196,6 +196,42 @@ export default class VehicleCertificateGenerator {
             label: "Cap de Carga",
             input: "150",
             validationClassArgs: [5, 2]
+        },
+        {
+            name: 'puerto_de_entrada',
+            label: "Puerto de Entrada",
+            input: "NA",
+            validationClassArgs: [2, 1]
+        },
+        {
+            name: 'planilla_liq_grv_n',
+            label: "Planilla Liq. Grav. N°",
+            input: "AAAAAAAAAAAAAAA",
+            validationClassArgs: [15, 3]
+        },
+        {
+            name: 'planilla_liq_grv_fecha',
+            label: "Planilla Liq. Grav. Fecha",
+            input: "20250908",
+            validationClassArgs: [8, 2]
+        },
+        {
+            name: 'factura_de_adquisicion_n',
+            label: "Fecha de Adquisición N°",
+            input: "AAAAAAAAAAAAAAA",
+            validationClassArgs: [15, 3]
+        },
+        {
+            name: 'factura_de_adquisicion_fecha',
+            label: "Fecha de Adquisición Fecha",
+            input: "20250908",
+            validationClassArgs: [8, 2]
+        },
+        {
+            name: 'refeciv',
+            label: "REFECIV",
+            input: "20250908",
+            validationClassArgs: [8, 3]
         }
     ];
 
