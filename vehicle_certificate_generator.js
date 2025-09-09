@@ -130,12 +130,18 @@ export default class VehicleCertificateGenerator {
     }
 
     collectFormData() {
+        // const inputs = document.querySelector('input[name]');
+
         const inputs = document.getElementsByTagName('input');
+
         console.log(inputs)
+
         const formData = {};
-        inputs.forEach(input => {
+
+        Array.from(inputs).forEach(input => {
             formData[input.name] = input.value;
         });
+
         return formData;
     }
 
