@@ -29,7 +29,7 @@ export default class VehicleRegistrationDocumentField {
             new HTMLSimpleTags("input"),
             `${id}_input`,
             ["sniper_list_item_input", "sniper_list_item_single_item_input"],
-            [["type", "text"], ["value", `${inputValue}`]],
+            [["type", "text"], ["value", `${inputValue}`],["name",`${id}`]],
             this.ComponentInputsContainer
         );
 
