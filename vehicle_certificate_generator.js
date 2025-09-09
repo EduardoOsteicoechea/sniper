@@ -99,7 +99,7 @@ export default class VehicleCertificateGenerator {
         this.generatePdfButton.addEventListener("click", async () => {
 
             var result = this.collectFormData();
-
+            console.log(result);
             try {
                 const response = await fetch(this.mainApiEndpoint, {
                     method: 'POST',
