@@ -6,6 +6,7 @@ import InputValidationBase from './input_validation.js';
 export default class VehicleCertificateGenerator {
     ElementGenerator = new HTMLElementGenerator()
 
+    outerContainerContainer = null
     outerContainer = null
     websiteUrl = ""
     mainApiEndpoint = ""
@@ -24,7 +25,7 @@ export default class VehicleCertificateGenerator {
         mainDataFileUrl,
         componentConfigDataFileUrl,
     ) {
-        this.outerContainer = outerContainer
+        this.outerContainerContainer = outerContainer
         this.websiteUrl = websiteUrl
         this.mainApiEndpoint = mainApiEndpoint
         this.mainDataFileUrl = mainDataFileUrl
@@ -38,8 +39,8 @@ export default class VehicleCertificateGenerator {
     async initialize() {
         try {
             this.componentConfigData = await this.GetComponentConfigData();
-
-            console.log(this.componentConfigData);
+            
+            this.outerContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], this.outerContainerContainer);
 
             this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
                 false,
