@@ -9,7 +9,7 @@
         {
             "name": "fecha_de_emision",
             "label": "Fecha de Emisión",
-            "input": "2025",
+            "input": "20250910",
             "validationClassArgs": [8, 2]
         },
         {
