@@ -95,7 +95,7 @@ export default class VehicleCertificateGenerator {
     }
 
     GenerateGeneratePdfButton() {
-        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type", "button"]], this.outerContainer, [], "Generar");
+        this.generatePdfButton = this.ElementGenerator.Generate(true, new HTMLComposedTags("button"), `generate_pdf_button`, ["generate_pdf_button"], [["type", "button"]], this.outerContainerContainer, [], "Generar");
 
         this.generatePdfButton.addEventListener("click", async () => {
 
