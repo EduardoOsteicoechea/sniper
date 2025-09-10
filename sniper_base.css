@@ -7,14 +7,18 @@
 }
 
 .generate_pfd_button{
-   height: 40px;
+   height: 30px;
    width: 100px;
-   background: rgb(0, 174, 255) !important;
+   background: rgb(0, 157, 230) !important;
+   color: #fff !important;
    margin: 10px 0 0 10px;
 }
 
 .certificate_fields_container{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .vehicle_certificate_generator_outer_container{
