@@ -7,9 +7,10 @@
 }
 
 .generate_pfd_button{
-   height: 30px;
-   width: 90px;
+   height: 40px;
+   width: 100px;
    background: rgb(0, 174, 255) !important;
+   margin: 10px 0 0 10px;
 }
 
 .certificate_fields_container{
