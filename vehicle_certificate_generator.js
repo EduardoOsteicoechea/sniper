@@ -40,7 +40,7 @@ export default class VehicleCertificateGenerator {
         try {
             this.componentConfigData = await this.GetComponentConfigData();
             
-            this.outerContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `${id}_outer_container`, ["sniper_list_item_container"], [], this.outerContainerContainer);
+            this.outerContainer = this.ElementGenerator.Generate(true, new HTMLComposedTags("div"), `sniper_list_item_container`, ["sniper_list_item_container"], [], this.outerContainerContainer);
 
             this.components = this.componentConfigData.fieldsData.map(config => new VehicleRegistrationDocumentField(
                 false,
