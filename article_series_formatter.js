@@ -106,13 +106,13 @@ export default class ArticleSeriesFormater {
 
         data.subideas.forEach(subidea => {
             if (subidea.type === "biblical_quote") {
-                html += generateArticleSubideaBiblicalQuote(subidea)
+                html += this.generateArticleSubideaBiblicalQuote(subidea)
             }
             else if (subidea.type === "image") {
-                html += generateArticleSubideaBiblicalQuote(subidea)
+                html += this.generateArticleSubideaImage(subidea)
             }
             else {
-                html += generateArticleSubideaBiblicalQuote(subidea)
+                html += this.generateArticleSubideaParagraph(subidea)
             }
         });
 
