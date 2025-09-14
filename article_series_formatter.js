@@ -26,6 +26,7 @@ export default class ArticleSeriesFormater {
             })
             .then(data => {
                 this.DataFileContent = data;
+                console.log(this.DataFileContent);
             })
             .catch(error => {
                 this.DataFileContent = error;
