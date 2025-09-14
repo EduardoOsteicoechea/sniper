@@ -35,41 +35,32 @@ export default class ArticleSeriesFormater {
     }
 
     print() {
-
-        data = this.DataFileContent
-        let htmlContent = "";
-
+        let html = "";
         const article_series_header = this.DataFileContent.article_series_header;
-        const article_header = this.DataFileContent.article_header;
         const articles = this.DataFileContent.articles;
-
-        htmlContent += this.generateArticleSeriesHeader(article_series_header);
-        htmlContent += this.generateArticlesContent(articles);
-
-
+        html += this.generateArticleSeriesHeader(article_series_header);
+        html += this.generateArticlesContent(articles);
+        this.DataHolderComponent.innerHTML = html;
     }
 
     generateArticleSeriesHeader(data) {
         return `
         <div class="article_series_header">
-            <h3 class="article_title">${data.title}</h1>
+            <h3 class="article_series_title">${data.title}</h3>
         </div>
         `;
     }
 
     generateArticlesContent(data) {
-        let htmlContent = ""
-
-        htmlContent += '<article class="article">';
-
+        html = '<div class="articles">';
         data.forEach(article => {
-            htmlContent += this.generateArticleHeader(article.article_header);
-            htmlContent += this.generateArticleBody(article.article_body);
+            html += '<article class="article">';
+            html += this.generateArticleHeader(article.article_header);
+            html += this.generateArticleBody(article.article_body);
+            html += '</article>';
         });
-
-        htmlContent += '</article>';
-
-        return htmlContent;
+        html += '</div>';
+        return html;
     }
 
     generateArticleHeader(data) {
@@ -84,35 +75,33 @@ export default class ArticleSeriesFormater {
     }
 
     generateArticleBody(data) {
-        let html = ""
-        const article_ideas = data.article_ideas
-        html += '<div class="article_idea">';
-        article_ideas.forEach(article_idea => {
-            html += this.generateArticleIdea(article_idea);
-        });
-        html += '</div>';
-        return html;
-    }
+        let html = '<ol class="article_ideas">';
 
-    generateArticleIdea(data) {
-        let html = ""
-        const article_idea_header = data.article_idea_header
-        const article_idea_body = data.article_idea_body
-        html += this.generateArticleIdeaHeader(article_idea_header);
-        html += this.generateArticleIdeaBody(article_idea_body);
+        const article_ideas = data.ideas
+
+        article_ideas.forEach(article_idea => {
+            html += '<li class="article_idea">';
+            html += this.generateArticleIdeaHeader(article_idea.header);
+            html += this.generateArticleIdeaBody(article_idea.body);
+            html += '</li>';
+        });
+
+        html += '/<ol>';
         return html;
     }
 
     generateArticleIdeaHeader(data) {
         let html = ""
         if (data.heading) {
-            html += `<h2 class="article_idea_heading">${idea.heading}</h2>`;
+            html += '<div class="article_idea_heading">';
+            html += `<h2>${idea.heading}</h2>`;
+            html += "</div>"
         }
         return html;
     }
 
     generateArticleIdeaBody(data) {
-        let html = "<div>"
+        let html = '<div class="article_idea_body">'
 
         data.subideas.forEach(subidea => {
             if (subidea.type === "biblical_quote") {

@@ -5,18 +5,18 @@
     "articles": [
         {
             "article_header": {
-                "article_title": "¿De quién es la culpa?",
-                "article_key_idea": "Dios coloca sobre nuestros hombros la responsabilidad de que por amor a Su gloria, y por amor al prójimo, evitemos, contengamos y mitiguemos males que Él traerá sobre nuestras vidas.",
-                "article_date": "7 de Septiembre del 2025",
-                "article_author": ""
+                "title": "¿De quién es la culpa?",
+                "key_idea": "Dios coloca sobre nuestros hombros la responsabilidad de que por amor a Su gloria, y por amor al prójimo, evitemos, contengamos y mitiguemos males que Él traerá sobre nuestras vidas.",
+                "date": "7 de Septiembre del 2025",
+                "author": ""
             },
             "article_body": {
-                "article_ideas": [
+                "ideas": [
                     {
-                        "article_idea_header": {
+                        "header": {
                             "heading": "aaa"
                         },
-                        "article_idea_body": {
+                        "body": {
                             "subideas": [
                                 {
                                     "subideas_content": "... te reservarás tres ciudades en medio de tu tierra que el Señor tu Dios te da en posesión. Prepararás los caminos, y dividirás en tres partes el territorio de tu tierra que el Señor tu Dios te dé en posesión, para que huya allí todo el que haya matado a alguien... cuando mate a su amigo sin querer...",
