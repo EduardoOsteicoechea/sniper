@@ -87,7 +87,7 @@ export default class ArticleSeriesFormater {
             html += '</li>';
         });
 
-        html += '/<ol>';
+        html += '</ol>';
         return html;
     }
 
