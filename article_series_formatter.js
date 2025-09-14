@@ -13,11 +13,10 @@ export default class ArticleSeriesFormater {
         this.DataFileUrl = dataFileUrl;
         this.DataHolderComponent = dataHolderComponent;
         this.ArticleApiUrl = articleApiUrl
-        this.fetchArticleDataFile();
     }
 
-    fetchArticleDataFile() {
-        fetch(this.DataFileUrl)
+    async fetchArticleDataFile() {
+        await fetch(this.DataFileUrl)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -35,7 +34,8 @@ export default class ArticleSeriesFormater {
             });
     }
 
-    print() {
+    async print() {
+        await this.fetchArticleDataFile();
         let html = "";
         const article_series_header = this.DataFileContent.article_series_header;
         const articles = this.DataFileContent.articles;
