@@ -1,0 +1,169 @@
+export default class ArticleSeriesFormater {
+    DataFileUrl = "";
+    DataFileContent = "";
+    DataHolderComponent = "";
+    ArticleApiUrl = "";
+
+    constructor
+        (
+            dataFileUrl,
+            dataHolderComponent,
+            articleApiUrl,
+        ) {
+        this.DataFileUrl = dataFileUrl;
+        this.DataHolderComponent = dataHolderComponent;
+        this.ArticleApiUrl = articleApiUrl
+        this.fetchArticleDataFile();
+    }
+
+    fetchArticleDataFile() {
+        fetch(this.DataFileUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                this.DataFileContent = data;
+            })
+            .catch(error => {
+                this.DataFileContent = error;
+                console.error('Failed fetch operation:', this.DataFileContent);
+                this.DataHolderComponent.innerHTML = this.DataFileContent;
+            });
+    }
+
+    print() {
+
+        data = this.DataFileContent
+        let htmlContent = "";
+
+        const article_series_header = this.DataFileContent.article_series_header;
+        const article_header = this.DataFileContent.article_header;
+        const articles = this.DataFileContent.articles;
+
+        htmlContent += this.generateArticleSeriesHeader(article_series_header);
+        htmlContent += this.generateArticlesContent(articles);
+
+
+    }
+
+    generateArticleSeriesHeader(data) {
+        return `
+        <div class="article_series_header">
+            <h3 class="article_title">${data.title}</h1>
+        </div>
+        `;
+    }
+
+    generateArticlesContent(data) {
+        let htmlContent = ""
+
+        htmlContent += '<article class="article">';
+
+        data.forEach(article => {
+            htmlContent += this.generateArticleHeader(article.article_header);
+            htmlContent += this.generateArticleBody(article.article_body);
+        });
+
+        htmlContent += '</article>';
+
+        return htmlContent;
+    }
+
+    generateArticleHeader(data) {
+        return `
+        <div class="article_header_container">
+            <h1 class="article_title">${data.title}</h1>
+            <p class="article_header_small_item article_key_idea">Síntesis: ${data.key_idea}</p>
+            <p class="article_header_small_item article_date">Fecha: ${data.date}</p>
+            <p class="article_header_small_item article_author">Autor: ${data.author}</p>
+        </div>
+        `;
+    }
+
+    generateArticleBody(data) {
+        let html = ""
+        const article_ideas = data.article_ideas
+        html += '<div class="article_idea">';
+        article_ideas.forEach(article_idea => {
+            html += this.generateArticleIdea(article_idea);
+        });
+        html += '</div>';
+        return html;
+    }
+
+    generateArticleIdea(data) {
+        let html = ""
+        const article_idea_header = data.article_idea_header
+        const article_idea_body = data.article_idea_body
+        html += this.generateArticleIdeaHeader(article_idea_header);
+        html += this.generateArticleIdeaBody(article_idea_body);
+        return html;
+    }
+
+    generateArticleIdeaHeader(data) {
+        let html = ""
+        if (data.heading) {
+            html += `<h2 class="article_idea_heading">${idea.heading}</h2>`;
+        }
+        return html;
+    }
+
+    generateArticleIdeaBody(data) {
+        let html = "<div>"
+
+        data.subideas.forEach(subidea => {
+            if (subidea.type === "biblical_quote") {
+                html += generateArticleSubideaBiblicalQuote(subidea)
+            }
+            else if (subidea.type === "image") {
+                html += generateArticleSubideaBiblicalQuote(subidea)
+            }
+            else {
+                html += generateArticleSubideaBiblicalQuote(subidea)
+            }
+        });
+
+        html += '</div>';
+        return html;
+    }
+
+    generateArticleSubideaBiblicalQuote(data) {
+        let html = "<div>"
+        if (data.key_phrases) {
+            data.key_phrases.forEach(key_phrase => {
+                data.content = data.content.replace(key_phrase, `<span class="biblical_quote_key_prhase">${key_phrase}</span>`)
+            });
+        }
+        html += `
+                <div class="biblical_quote">
+                  <p class="biblical_quote_text">${data.content}</p>
+                  <p class="biblical_quote_reference">${data.biblical_reference}</p>
+                </div>
+                `
+        html += '</div>';
+        return html;
+    }
+
+    generateArticleSubideaParagraph(data) {
+        return `<p>${data.content}</p>`;
+    }
+
+    generateArticleSubideaImage(data) {
+        return `
+        <div class="image">
+            <img src="static/images/${data.content}">
+        </div>
+        `;
+    }
+
+
+
+
+
+    ///////////////////////
+    /// Class end
+    ///////////////////////
+}

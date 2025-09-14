@@ -9,7 +9,7 @@
     line-height: 20px;
 }
 
-.article_heading_container {
+.article_header_container {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -22,7 +22,7 @@
     font-size: 45px;
     line-height: 50px;
 }
-.article_heading_small_item {
+.article_header_small_item {
     background: var(--cg_4);
     padding: 5px;
     border-radius: 3px;
@@ -76,7 +76,7 @@
     gap: 15px;
 }
 
-.idea_heading {
+.idea_header {
     font-size: 35px;
     line-height: 35px;
     margin-top: 20px;

@@ -1,0 +1,40 @@
+{
+    "article_series_header": {
+        "title": "Responsabilismo bíblico"
+    },
+    "articles": [
+        {
+            "article_header": {
+                "article_title": "¿De quién es la culpa?",
+                "article_key_idea": "Dios coloca sobre nuestros hombros la responsabilidad de que por amor a Su gloria, y por amor al prójimo, evitemos, contengamos y mitiguemos males que Él traerá sobre nuestras vidas.",
+                "article_date": "7 de Septiembre del 2025",
+                "article_author": ""
+            },
+            "article_body": {
+                "article_ideas": [
+                    {
+                        "article_idea_header": {
+                            "heading": "aaa"
+                        },
+                        "article_idea_body": {
+                            "subideas": [
+                                {
+                                    "subideas_content": "... te reservarás tres ciudades en medio de tu tierra que el Señor tu Dios te da en posesión. Prepararás los caminos, y dividirás en tres partes el territorio de tu tierra que el Señor tu Dios te dé en posesión, para que huya allí todo el que haya matado a alguien... cuando mate a su amigo sin querer...",
+                                    "subideas_type": "biblical_quote",
+                                    "subideas_biblical_reference": "Deuteronomio.19.2-5",
+                                    "biblical_reference_key_phrases": [
+                                        "para que huya allí todo el que haya matado a alguien",
+                                        "cuando mate a su amigo sin querer"
+                                    ]
+                                },
+                                {
+                                    "subideas_": "Incluso en la tierra prometida, incluso con una obediencia robusta, el mal vendrá, por lo que debes prepararte para ello."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
