@@ -95,7 +95,7 @@ export default class ArticleSeriesFormater {
         let html = ""
         if (data.heading) {
             html += '<div class="article_idea_heading">';
-            html += `<h2>${idea.heading}</h2>`;
+            html += `<h2>${data.heading}</h2>`;
             html += "</div>"
         }
         return html;
