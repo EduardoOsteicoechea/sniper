@@ -53,7 +53,7 @@ export default class ArticleSeriesFormater {
     }
 
     generateArticlesContent(data) {
-        html = '<div class="articles">';
+        let html = '<div class="articles">';
         data.forEach(article => {
             html += '<article class="article">';
             html += this.generateArticleHeader(article.article_header);
